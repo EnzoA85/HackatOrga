@@ -1,8 +1,8 @@
 namespace OrgaHackat
 {
-    public partial class Form1 : Form
+    public partial class accueil : Form
     {
-        public Form1()
+        public accueil()
         {
             InitializeComponent();
         }
