@@ -61,7 +61,7 @@
             this.btn_atelier.Name = "btn_atelier";
             this.btn_atelier.Size = new System.Drawing.Size(213, 74);
             this.btn_atelier.TabIndex = 2;
-            this.btn_atelier.Text = "Ateliers";
+            this.btn_atelier.Text = "Ateliers Initiation";
             this.btn_atelier.UseVisualStyleBackColor = true;
             // 
             // btn_conference
