@@ -39,11 +39,13 @@
             this.lblMin = new System.Windows.Forms.Label();
             this.dtpTime = new System.Windows.Forms.DateTimePicker();
             this.lblSalle = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tbxSalle = new System.Windows.Forms.TextBox();
             this.lblTheme = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxTheme = new System.Windows.Forms.TextBox();
             this.btnEnregistrer = new System.Windows.Forms.Button();
+            this.numDuree = new System.Windows.Forms.NumericUpDown();
+            this.lblMinute = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numDuree)).BeginInit();
             this.SuspendLayout();
             // 
             // cbxChoixDeHackaton
@@ -143,16 +145,6 @@
             this.lblSalle.TabIndex = 11;
             this.lblSalle.Text = "Salle :";
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(145, 184);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(69, 23);
-            this.dateTimePicker1.TabIndex = 12;
-            this.dateTimePicker1.Value = new System.DateTime(2022, 11, 21, 0, 0, 0, 0);
-            // 
             // tbxSalle
             // 
             this.tbxSalle.Location = new System.Drawing.Point(145, 219);
@@ -169,12 +161,12 @@
             this.lblTheme.TabIndex = 14;
             this.lblTheme.Text = "Theme :";
             // 
-            // textBox1
+            // tbxTheme
             // 
-            this.textBox1.Location = new System.Drawing.Point(145, 252);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(258, 23);
-            this.textBox1.TabIndex = 15;
+            this.tbxTheme.Location = new System.Drawing.Point(145, 252);
+            this.tbxTheme.Name = "tbxTheme";
+            this.tbxTheme.Size = new System.Drawing.Size(258, 23);
+            this.tbxTheme.TabIndex = 15;
             // 
             // btnEnregistrer
             // 
@@ -184,17 +176,35 @@
             this.btnEnregistrer.TabIndex = 16;
             this.btnEnregistrer.Text = "Enregistrer";
             this.btnEnregistrer.UseVisualStyleBackColor = true;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
+            // 
+            // numDuree
+            // 
+            this.numDuree.Location = new System.Drawing.Point(146, 188);
+            this.numDuree.Name = "numDuree";
+            this.numDuree.Size = new System.Drawing.Size(53, 23);
+            this.numDuree.TabIndex = 17;
+            // 
+            // lblMinute
+            // 
+            this.lblMinute.AutoSize = true;
+            this.lblMinute.Location = new System.Drawing.Point(205, 190);
+            this.lblMinute.Name = "lblMinute";
+            this.lblMinute.Size = new System.Drawing.Size(28, 15);
+            this.lblMinute.TabIndex = 18;
+            this.lblMinute.Text = "min";
             // 
             // enregistrerConference
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 340);
+            this.Controls.Add(this.lblMinute);
+            this.Controls.Add(this.numDuree);
             this.Controls.Add(this.btnEnregistrer);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbxTheme);
             this.Controls.Add(this.lblTheme);
             this.Controls.Add(this.tbxSalle);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lblSalle);
             this.Controls.Add(this.dtpTime);
             this.Controls.Add(this.lblMin);
@@ -209,6 +219,7 @@
             this.Name = "enregistrerConference";
             this.Text = "enregistrer";
             this.Load += new System.EventHandler(this.enregistrerConference_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numDuree)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,10 +238,11 @@
         private Label lblMin;
         private DateTimePicker dtpTime;
         private Label lblSalle;
-        private DateTimePicker dateTimePicker1;
         private TextBox tbxSalle;
         private Label lblTheme;
-        private TextBox textBox1;
+        private TextBox tbxTheme;
         private Button btnEnregistrer;
+        private NumericUpDown numDuree;
+        private Label lblMinute;
     }
 }
