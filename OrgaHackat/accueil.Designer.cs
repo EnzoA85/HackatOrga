@@ -63,6 +63,7 @@
             this.btninitiation.TabIndex = 2;
             this.btninitiation.Text = "Initiation";
             this.btninitiation.UseVisualStyleBackColor = true;
+            this.btninitiation.Click += new System.EventHandler(this.btninitiation_Click);
             // 
             // btn_conference
             // 
