@@ -53,6 +53,7 @@
             this.btn_hackathons.TabIndex = 1;
             this.btn_hackathons.Text = "Hackathons";
             this.btn_hackathons.UseVisualStyleBackColor = true;
+            this.btn_hackathons.Click += new System.EventHandler(this.btn_hackathons_Click);
             // 
             // btn_atelier
             // 
