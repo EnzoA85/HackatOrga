@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btn_hackathons = new System.Windows.Forms.Button();
-            this.btn_atelier = new System.Windows.Forms.Button();
+            this.btninitiation = new System.Windows.Forms.Button();
             this.btn_conference = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -54,15 +54,15 @@
             this.btn_hackathons.Text = "Hackathons";
             this.btn_hackathons.UseVisualStyleBackColor = true;
             // 
-            // btn_atelier
+            // btninitiation
             // 
-            this.btn_atelier.Font = new System.Drawing.Font("Segoe UI Semibold", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_atelier.Location = new System.Drawing.Point(290, 308);
-            this.btn_atelier.Name = "btn_atelier";
-            this.btn_atelier.Size = new System.Drawing.Size(213, 74);
-            this.btn_atelier.TabIndex = 2;
-            this.btn_atelier.Text = "Ateliers Initiation";
-            this.btn_atelier.UseVisualStyleBackColor = true;
+            this.btninitiation.Font = new System.Drawing.Font("Segoe UI Semibold", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btninitiation.Location = new System.Drawing.Point(290, 308);
+            this.btninitiation.Name = "btninitiation";
+            this.btninitiation.Size = new System.Drawing.Size(213, 74);
+            this.btninitiation.TabIndex = 2;
+            this.btninitiation.Text = "Initiation";
+            this.btninitiation.UseVisualStyleBackColor = true;
             // 
             // btn_conference
             // 
@@ -80,11 +80,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btn_conference);
-            this.Controls.Add(this.btn_atelier);
+            this.Controls.Add(this.btninitiation);
             this.Controls.Add(this.btn_hackathons);
             this.Controls.Add(this.label1);
             this.Name = "accueil";
-            this.Text = "la";
+            this.Text = "HackatAgence";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,7 +94,7 @@
 
         private Label label1;
         private Button btn_hackathons;
-        private Button btn_atelier;
+        private Button btninitiation;
         private Button btn_conference;
     }
 }

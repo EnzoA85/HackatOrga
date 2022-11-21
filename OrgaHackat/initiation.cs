@@ -35,6 +35,7 @@ namespace OrgaHackat
             bddboudero5Context cnx = new bddboudero5Context();
 
             //(Heritage) Créer d'abord un événement puis une initiation avec la meme id
+            
             Evenement EvInitiation = new Evenement()
             {
                 //Recupération des champs apres conversion en leur bon type

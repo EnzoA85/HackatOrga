@@ -236,7 +236,7 @@
             this.Controls.Add(this.cbxHackathons);
             this.Controls.Add(this.label1);
             this.Name = "initiation";
-            this.Text = "initiation";
+            this.Text = "Créer une initiation";
             this.Load += new System.EventHandler(this.initiation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numNbPlaces)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDuree)).EndInit();
