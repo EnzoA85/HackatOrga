@@ -45,6 +45,7 @@
             this.btnEnregistrer = new System.Windows.Forms.Button();
             this.numDuree = new System.Windows.Forms.NumericUpDown();
             this.lblMinute = new System.Windows.Forms.Label();
+            this.lblMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numDuree)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,11 +195,20 @@
             this.lblMinute.TabIndex = 18;
             this.lblMinute.Text = "min";
             // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Location = new System.Drawing.Point(12, 305);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(0, 15);
+            this.lblMessage.TabIndex = 19;
+            // 
             // enregistrerConference
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 340);
+            this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.lblMinute);
             this.Controls.Add(this.numDuree);
             this.Controls.Add(this.btnEnregistrer);
@@ -244,5 +254,6 @@
         private Button btnEnregistrer;
         private NumericUpDown numDuree;
         private Label lblMinute;
+        private Label lblMessage;
     }
 }

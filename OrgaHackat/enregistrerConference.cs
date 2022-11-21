@@ -41,28 +41,36 @@ namespace OrgaHackat
         {
             bddboudero5Context cnx = new bddboudero5Context();
 
-            // creation de l'objet evenement
-            Evenement evenement = new Evenement()
+            if(tbxLibelle.Text == null)
             {
-                HackathonId = cbxChoixDeHackaton.SelectedIndex,
-                Libelle = tbxLibelle.Text,
-                Date = DateOnly.FromDateTime(Convert.ToDateTime(dtpDate.Value)), // convertion en datetime puis date only
-                Duree = Convert.ToInt32(numDuree.Value),
-                Heure = TimeOnly.FromDateTime(Convert.ToDateTime(dtpTime.Value)), // convertion en datetime puis time only
-                Salle = tbxSalle.Text,
-                Type = "conf" // type necessaire pour la bdd et symfony
-            };
-            cnx.Evenements.Add(evenement);
-            cnx.SaveChanges();
+                lblMessage.ForeColor = Color.Red;
+                lblMessage.Text = "libelle de l'evenement est vide !";
+            }
+            else
+            {
+                // creation de l'objet evenement
+                Evenement evenement = new Evenement()
+                {
+                    HackathonId = cbxChoixDeHackaton.SelectedIndex,
+                    Libelle = tbxLibelle.Text,
+                    Date = DateOnly.FromDateTime(Convert.ToDateTime(dtpDate.Value)), // convertion en datetime puis date only
+                    Duree = Convert.ToInt32(numDuree.Value),
+                    Heure = TimeOnly.FromDateTime(Convert.ToDateTime(dtpTime.Value)), // convertion en datetime puis time only
+                    Salle = tbxSalle.Text,
+                    Type = "conf" // type necessaire pour la bdd et symfony
+                };
+                cnx.Evenements.Add(evenement);
+                cnx.SaveChanges();
 
-            // creation de l'objet evenement
-            Conference conference = new Conference()
-            {
-                Id = evenement.Id,
-                Theme = tbxTheme.Text,
-            };
-            cnx.Conferences.Add(conference);
-            cnx.SaveChanges();
+                // creation de l'objet evenement
+                Conference conference = new Conference()
+                {
+                    Id = evenement.Id,
+                    Theme = tbxTheme.Text,
+                };
+                cnx.Conferences.Add(conference);
+                cnx.SaveChanges();
+            }
         }
     }
 }
