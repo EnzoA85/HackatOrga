@@ -63,6 +63,7 @@
             this.editHackathon.TabIndex = 1;
             this.editHackathon.Text = "Modifier";
             this.editHackathon.UseVisualStyleBackColor = true;
+            this.editHackathon.Click += new System.EventHandler(this.editHackathon_Click);
             // 
             // hackathons
             // 

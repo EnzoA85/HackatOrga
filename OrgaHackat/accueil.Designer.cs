@@ -73,6 +73,7 @@
             this.btn_conference.TabIndex = 3;
             this.btn_conference.Text = "Conférences";
             this.btn_conference.UseVisualStyleBackColor = true;
+            this.btn_conference.Click += new System.EventHandler(this.btn_conference_Click);
             // 
             // accueil
             // 
@@ -85,6 +86,7 @@
             this.Controls.Add(this.label1);
             this.Name = "accueil";
             this.Text = "la";
+            this.Load += new System.EventHandler(this.accueil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
