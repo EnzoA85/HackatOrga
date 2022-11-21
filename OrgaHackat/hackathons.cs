@@ -20,6 +20,10 @@ namespace OrgaHackat
         }
         private void hackathons_Load(object sender, EventArgs e)
         {
+            bddboudero5Context cnx = new bddboudero5Context();
+            cbx_choixHackathon.DataSource = cnx.Hackathons.ToList();
+            cbx_choixHackathon.DisplayMember = "Theme";
+            cbx_choixHackathon.ValueMember = "Id";
         }
 
         private void btn_ajouter_Click(object sender, EventArgs e)
@@ -65,6 +69,24 @@ namespace OrgaHackat
             accueil Form1 = new accueil();
             Form1.Show();
             this.Hide();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbx_choixHackathon.SelectedIndex != 0)
+            {
+                bddboudero5Context cnx = new bddboudero5Context();
+                //On récupère le client choisi dans la liste
+                Hackathon unHackathon = (Hackathon)cbx_choixHackathon.SelectedItem;
+                tbx_theme_edit_hackathon.Text = unHackathon.Theme;
+                tbx_image_edit_hackathon.Text = unHackathon.Image;
+                tbx_rue_edit_hackathon.Text = unHackathon.Rue;
+                tbx_ville_edit_hackathon.Text = unHackathon.Ville;
+                tbx_cp_edit_hackathon.Text = unHackathon.CodePostal;
+                tbx_lieu_edit_hackathon.Text = unHackathon.Lieu;
+                tbx_description_edit_hackathon.Text = unHackathon.Description;
+                nud_nbplace_edit_hackathon.TabIndex = (int)unHackathon.NbPlaces;
+            }
         }
     }
 }
