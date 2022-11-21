@@ -132,6 +132,7 @@
             this.dtpTime.ShowUpDown = true;
             this.dtpTime.Size = new System.Drawing.Size(69, 23);
             this.dtpTime.TabIndex = 10;
+            this.dtpTime.Value = new System.DateTime(2022, 11, 21, 0, 0, 0, 0);
             // 
             // lblSalle
             // 
