@@ -36,17 +36,20 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.lblDuree = new System.Windows.Forms.Label();
-            this.numDuree = new System.Windows.Forms.NumericUpDown();
             this.lblMin = new System.Windows.Forms.Label();
             this.dtpTime = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numDuree)).BeginInit();
+            this.lblSalle = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.tbxSalle = new System.Windows.Forms.TextBox();
+            this.lblTheme = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnEnregistrer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cbxChoixDeHackaton
             // 
             this.cbxChoixDeHackaton.FormattingEnabled = true;
-            this.cbxChoixDeHackaton.Location = new System.Drawing.Point(289, 74);
+            this.cbxChoixDeHackaton.Location = new System.Drawing.Point(143, 74);
             this.cbxChoixDeHackaton.Name = "cbxChoixDeHackaton";
             this.cbxChoixDeHackaton.Size = new System.Drawing.Size(290, 23);
             this.cbxChoixDeHackaton.TabIndex = 0;
@@ -57,9 +60,9 @@
             this.lblChoixHackaton.AutoSize = true;
             this.lblChoixHackaton.Location = new System.Drawing.Point(12, 77);
             this.lblChoixHackaton.Name = "lblChoixHackaton";
-            this.lblChoixHackaton.Size = new System.Drawing.Size(271, 15);
+            this.lblChoixHackaton.Size = new System.Drawing.Size(125, 30);
             this.lblChoixHackaton.TabIndex = 1;
-            this.lblChoixHackaton.Text = "Choix du hackaton où se déroulera la conférence :";
+            this.lblChoixHackaton.Text = "Choisissez le hackaton\r\nde cette conférence";
             // 
             // lblTitre
             // 
@@ -90,7 +93,7 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(98, 156);
+            this.lblDate.Location = new System.Drawing.Point(104, 158);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(36, 15);
             this.lblDate.TabIndex = 5;
@@ -113,21 +116,13 @@
             this.lblDuree.TabIndex = 7;
             this.lblDuree.Text = "Durée de l\'evenement :";
             // 
-            // numDuree
-            // 
-            this.numDuree.Location = new System.Drawing.Point(145, 188);
-            this.numDuree.Name = "numDuree";
-            this.numDuree.Size = new System.Drawing.Size(52, 23);
-            this.numDuree.TabIndex = 8;
-            // 
             // lblMin
             // 
             this.lblMin.AutoSize = true;
-            this.lblMin.Location = new System.Drawing.Point(203, 190);
+            this.lblMin.Location = new System.Drawing.Point(220, 196);
             this.lblMin.Name = "lblMin";
-            this.lblMin.Size = new System.Drawing.Size(28, 15);
+            this.lblMin.Size = new System.Drawing.Size(0, 15);
             this.lblMin.TabIndex = 9;
-            this.lblMin.Text = "min";
             // 
             // dtpTime
             // 
@@ -138,24 +133,70 @@
             this.dtpTime.Size = new System.Drawing.Size(69, 23);
             this.dtpTime.TabIndex = 10;
             // 
-            // label1
+            // lblSalle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(102, 222);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "label1";
+            this.lblSalle.AutoSize = true;
+            this.lblSalle.Location = new System.Drawing.Point(102, 222);
+            this.lblSalle.Name = "lblSalle";
+            this.lblSalle.Size = new System.Drawing.Size(37, 15);
+            this.lblSalle.TabIndex = 11;
+            this.lblSalle.Text = "Salle :";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker1.Location = new System.Drawing.Point(145, 184);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ShowUpDown = true;
+            this.dateTimePicker1.Size = new System.Drawing.Size(69, 23);
+            this.dateTimePicker1.TabIndex = 12;
+            this.dateTimePicker1.Value = new System.DateTime(2022, 11, 21, 0, 0, 0, 0);
+            // 
+            // tbxSalle
+            // 
+            this.tbxSalle.Location = new System.Drawing.Point(145, 219);
+            this.tbxSalle.Name = "tbxSalle";
+            this.tbxSalle.Size = new System.Drawing.Size(100, 23);
+            this.tbxSalle.TabIndex = 13;
+            // 
+            // lblTheme
+            // 
+            this.lblTheme.AutoSize = true;
+            this.lblTheme.Location = new System.Drawing.Point(90, 255);
+            this.lblTheme.Name = "lblTheme";
+            this.lblTheme.Size = new System.Drawing.Size(49, 15);
+            this.lblTheme.TabIndex = 14;
+            this.lblTheme.Text = "Theme :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(145, 252);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(258, 23);
+            this.textBox1.TabIndex = 15;
+            // 
+            // btnEnregistrer
+            // 
+            this.btnEnregistrer.Location = new System.Drawing.Point(357, 305);
+            this.btnEnregistrer.Name = "btnEnregistrer";
+            this.btnEnregistrer.Size = new System.Drawing.Size(76, 23);
+            this.btnEnregistrer.TabIndex = 16;
+            this.btnEnregistrer.Text = "Enregistrer";
+            this.btnEnregistrer.UseVisualStyleBackColor = true;
             // 
             // enregistrerConference
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(457, 340);
+            this.Controls.Add(this.btnEnregistrer);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblTheme);
+            this.Controls.Add(this.tbxSalle);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.lblSalle);
             this.Controls.Add(this.dtpTime);
             this.Controls.Add(this.lblMin);
-            this.Controls.Add(this.numDuree);
             this.Controls.Add(this.lblDuree);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.lblDate);
@@ -165,9 +206,8 @@
             this.Controls.Add(this.lblChoixHackaton);
             this.Controls.Add(this.cbxChoixDeHackaton);
             this.Name = "enregistrerConference";
-            this.Text = "enregistrerConference";
+            this.Text = "enregistrer";
             this.Load += new System.EventHandler(this.enregistrerConference_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numDuree)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,9 +223,13 @@
         private Label lblDate;
         private DateTimePicker dtpDate;
         private Label lblDuree;
-        private NumericUpDown numDuree;
         private Label lblMin;
         private DateTimePicker dtpTime;
-        private Label label1;
+        private Label lblSalle;
+        private DateTimePicker dateTimePicker1;
+        private TextBox tbxSalle;
+        private Label lblTheme;
+        private TextBox textBox1;
+        private Button btnEnregistrer;
     }
 }
