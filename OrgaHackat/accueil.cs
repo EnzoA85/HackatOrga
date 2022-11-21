@@ -18,5 +18,12 @@ namespace OrgaHackat
             form.Show();
             this.Hide();
         }
+
+        private void btninitiation_Click(object sender, EventArgs e)
+        {
+            initiation Form1 = new initiation();
+            Form1.Show();
+            this.Hide();
+        }
     }
 }
