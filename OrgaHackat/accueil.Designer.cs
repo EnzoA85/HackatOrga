@@ -32,6 +32,7 @@
             this.btn_hackathons = new System.Windows.Forms.Button();
             this.btninitiation = new System.Windows.Forms.Button();
             this.btn_conference = new System.Windows.Forms.Button();
+            this.btnImprimer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -76,19 +77,29 @@
             this.btn_conference.UseVisualStyleBackColor = true;
             this.btn_conference.Click += new System.EventHandler(this.btn_conference_Click);
             // 
+            // btnImprimer
+            // 
+            this.btnImprimer.Location = new System.Drawing.Point(548, 173);
+            this.btnImprimer.Name = "btnImprimer";
+            this.btnImprimer.Size = new System.Drawing.Size(229, 85);
+            this.btnImprimer.TabIndex = 4;
+            this.btnImprimer.Text = "Imprimer";
+            this.btnImprimer.UseVisualStyleBackColor = true;
+            this.btnImprimer.Click += new System.EventHandler(this.btnImprimer_Click);
+            // 
             // accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnImprimer);
             this.Controls.Add(this.btn_conference);
             this.Controls.Add(this.btninitiation);
             this.Controls.Add(this.btn_hackathons);
             this.Controls.Add(this.label1);
             this.Name = "accueil";
-            this.Text = "la";
-            this.Load += new System.EventHandler(this.accueil_Load);
             this.Text = "HackatAgence";
+            this.Load += new System.EventHandler(this.accueil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,5 +111,6 @@
         private Button btn_hackathons;
         private Button btninitiation;
         private Button btn_conference;
+        private Button btnImprimer;
     }
 }

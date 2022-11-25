@@ -1,3 +1,6 @@
+using System.Diagnostics;
+using System.IO;
+
 namespace OrgaHackat
 {
     public partial class accueil : Form
@@ -24,6 +27,11 @@ namespace OrgaHackat
             initiation Form1 = new initiation();
             Form1.Show();
             this.Hide();
+        }
+
+        private void btnImprimer_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
