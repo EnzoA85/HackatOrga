@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxHackathons = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.numNbPlaces = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tbxLibelle = new System.Windows.Forms.TextBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,6 +46,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.tbxSalle = new System.Windows.Forms.TextBox();
             this.btnCreerInitiation = new System.Windows.Forms.Button();
+            this.btnretour = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numNbPlaces)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDuree)).BeginInit();
             this.SuspendLayout();
@@ -99,16 +98,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(104, 160);
+            this.label4.Location = new System.Drawing.Point(104, 155);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 15);
+            this.label4.Size = new System.Drawing.Size(40, 15);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Libelle :";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.label4.Text = "Nom :";
             // 
             // tbxLibelle
             // 
@@ -212,11 +206,22 @@
             this.btnCreerInitiation.UseVisualStyleBackColor = true;
             this.btnCreerInitiation.Click += new System.EventHandler(this.btnCreerInitiation_Click);
             // 
+            // btnretour
+            // 
+            this.btnretour.Location = new System.Drawing.Point(432, 322);
+            this.btnretour.Name = "btnretour";
+            this.btnretour.Size = new System.Drawing.Size(107, 29);
+            this.btnretour.TabIndex = 19;
+            this.btnretour.Text = "Retour";
+            this.btnretour.UseVisualStyleBackColor = true;
+            this.btnretour.Click += new System.EventHandler(this.btnretour_Click);
+            // 
             // initiation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 381);
+            this.Controls.Add(this.btnretour);
             this.Controls.Add(this.btnCreerInitiation);
             this.Controls.Add(this.tbxSalle);
             this.Controls.Add(this.label10);
@@ -253,7 +258,6 @@
         private Label label3;
         private NumericUpDown numNbPlaces;
         private Label label4;
-        private ContextMenuStrip contextMenuStrip1;
         private TextBox tbxLibelle;
         private DateTimePicker dtpDate;
         private Label label5;
@@ -266,5 +270,6 @@
         private Label label10;
         private TextBox tbxSalle;
         private Button btnCreerInitiation;
+        private Button btnretour;
     }
 }
