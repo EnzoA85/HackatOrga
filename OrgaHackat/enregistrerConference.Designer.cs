@@ -46,6 +46,7 @@
             this.numDuree = new System.Windows.Forms.NumericUpDown();
             this.lblMinute = new System.Windows.Forms.Label();
             this.lblMessage = new System.Windows.Forms.Label();
+            this.btnRetour = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numDuree)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,7 +172,7 @@
             // 
             // btnEnregistrer
             // 
-            this.btnEnregistrer.Location = new System.Drawing.Point(357, 305);
+            this.btnEnregistrer.Location = new System.Drawing.Point(288, 305);
             this.btnEnregistrer.Name = "btnEnregistrer";
             this.btnEnregistrer.Size = new System.Drawing.Size(76, 23);
             this.btnEnregistrer.TabIndex = 16;
@@ -203,11 +204,22 @@
             this.lblMessage.Size = new System.Drawing.Size(0, 15);
             this.lblMessage.TabIndex = 19;
             // 
+            // btnRetour
+            // 
+            this.btnRetour.Location = new System.Drawing.Point(370, 305);
+            this.btnRetour.Name = "btnRetour";
+            this.btnRetour.Size = new System.Drawing.Size(75, 23);
+            this.btnRetour.TabIndex = 20;
+            this.btnRetour.Text = "Retour";
+            this.btnRetour.UseVisualStyleBackColor = true;
+            this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
+            // 
             // enregistrerConference
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 340);
+            this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.lblMinute);
             this.Controls.Add(this.numDuree);
@@ -255,5 +267,6 @@
         private NumericUpDown numDuree;
         private Label lblMinute;
         private Label lblMessage;
+        private Button btnRetour;
     }
 }

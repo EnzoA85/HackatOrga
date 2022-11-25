@@ -41,10 +41,15 @@ namespace OrgaHackat
         {
             bddboudero5Context cnx = new bddboudero5Context();
 
-            if(tbxLibelle.Text == null)
+            if(tbxLibelle.Text == "")
             {
                 lblMessage.ForeColor = Color.Red;
                 lblMessage.Text = "libelle de l'evenement est vide !";
+            }
+            else if(numDuree.Value == 0)
+            {
+                lblMessage.ForeColor = Color.Red;
+                lblMessage.Text = "durée d'evenement invalide !";
             }
             else
             {
@@ -70,7 +75,15 @@ namespace OrgaHackat
                 };
                 cnx.Conferences.Add(conference);
                 cnx.SaveChanges();
+                MessageBox.Show("Conference enregistrée !");
             }
+        }
+
+        private void btnRetour_Click(object sender, EventArgs e)
+        {
+            accueil page = new accueil();
+            page.Show();
+            this.Hide();
         }
     }
 }
