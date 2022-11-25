@@ -25,6 +25,9 @@ namespace OrgaHackat
             cbxChoixDeHackaton.DataSource = cnx.Hackathons.ToList();
             cbxChoixDeHackaton.DisplayMember = "Theme";
             cbxChoixDeHackaton.ValueMember = "Id";
+            cbxIntervenant.DataSource = cnx.Intervenants.ToList();
+            cbxIntervenant.DisplayMember= "Nom";
+            cbxIntervenant.ValueMember = "Id";
         }
 
         private void cbxChoixDeHackaton_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,18 +65,28 @@ namespace OrgaHackat
                     Duree = Convert.ToInt32(numDuree.Value),
                     Heure = TimeOnly.FromDateTime(Convert.ToDateTime(dtpTime.Value)), // convertion en datetime puis time only
                     Salle = tbxSalle.Text,
-                    Type = "conf" // type necessaire pour la bdd et symfony
+                    Type = "conf", // type necessaire pour la bdd et symfony
                 };
                 cnx.Evenements.Add(evenement);
                 cnx.SaveChanges();
+
+                // on recup l'intervenant avec l'id
+                Intervenant intervenant = cnx.Intervenants.Where(id => id.Id == cbxIntervenant.SelectedIndex).Single();
 
                 // creation de l'objet evenement
                 Conference conference = new Conference()
                 {
                     Id = evenement.Id,
                     Theme = tbxTheme.Text,
+                    Intervenant = intervenant
                 };
                 cnx.Conferences.Add(conference);
+                cnx.SaveChanges();
+
+                // ajout de la conference dans la liste de l'intervenant
+                intervenant.Conferences.Add(conference);
+                cnx.Intervenants.Update(intervenant);
+
                 cnx.SaveChanges();
                 MessageBox.Show("Conference enregistrée !");
             }
