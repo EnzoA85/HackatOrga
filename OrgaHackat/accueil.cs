@@ -1,5 +1,7 @@
+using OrgaHackat.Models;
 using System.Diagnostics;
 using System.IO;
+using System.Windows.Forms;
 
 namespace OrgaHackat
 {
@@ -12,7 +14,7 @@ namespace OrgaHackat
 
         private void accueil_Load(object sender, EventArgs e)
         {
-
+            bddboudero5Context cnx = new bddboudero5Context();
         }
 
         private void btn_conference_Click(object sender, EventArgs e)
@@ -31,7 +33,7 @@ namespace OrgaHackat
 
         private void btnImprimer_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
