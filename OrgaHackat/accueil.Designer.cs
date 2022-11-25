@@ -86,12 +86,9 @@
             this.Controls.Add(this.btn_hackathons);
             this.Controls.Add(this.label1);
             this.Name = "accueil";
-<<<<<<< HEAD
             this.Text = "la";
             this.Load += new System.EventHandler(this.accueil_Load);
-=======
             this.Text = "HackatAgence";
->>>>>>> a4ab4a40404e23dd43e6676768b7fa82f81d68c5
             this.ResumeLayout(false);
             this.PerformLayout();
 
