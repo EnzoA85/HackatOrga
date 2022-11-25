@@ -38,7 +38,7 @@ namespace OrgaHackat
                 Rue = tbx_rue_hackathon.Text,
                 Ville = tbx_ville_hackathon.Text,
                 CodePostal = tbx_cp_hackathon.Text,
-                NbPlaces = npd_nbplace_hackathon.TabIndex,
+                NbPlaces = Convert.ToInt32(npd_nbplace_hackathon),
                 DateDebut = DateOnly.FromDateTime(Convert.ToDateTime(dtp_datedebut_hackathon.Value)),
                 DateFin = DateOnly.FromDateTime(Convert.ToDateTime(dtp_datefin_hackathon.Value)),
                 DateLimite = DateOnly.FromDateTime(Convert.ToDateTime(dtp_datelimite_hackathon.Value)),
@@ -76,7 +76,7 @@ namespace OrgaHackat
             if (cbx_choixHackathon.SelectedIndex != 0)
             {
                 bddboudero5Context cnx = new bddboudero5Context();
-                //On récupère le client choisi dans la liste
+                //On récupère le Hackathon choisi dans la liste
                 Hackathon unHackathon = (Hackathon)cbx_choixHackathon.SelectedItem;
                 tbx_theme_edit_hackathon.Text = unHackathon.Theme;
                 tbx_image_edit_hackathon.Text = unHackathon.Image;
@@ -85,7 +85,11 @@ namespace OrgaHackat
                 tbx_cp_edit_hackathon.Text = unHackathon.CodePostal;
                 tbx_lieu_edit_hackathon.Text = unHackathon.Lieu;
                 tbx_description_edit_hackathon.Text = unHackathon.Description;
-                nud_nbplace_edit_hackathon.TabIndex = (int)unHackathon.NbPlaces;
+                nud_nbplace_edit_hackathon.Value = Convert.ToDecimal(unHackathon.NbPlaces);
+                dtp_datedebut_edit_hackathon.Value = unHackathon.DateDebut.ToDateTime(TimeOnly.Parse("10:00 PM"));
+                dtp_datefin_edit_hackathon.Value = unHackathon.DateFin.ToDateTime(TimeOnly.Parse("10:00 PM"));
+                dtp_datelimite_edit_hackathon.Value = unHackathon.DateLimite.ToDateTime(TimeOnly.Parse("10:00 PM"));
+                dtp_heuredebut_edit_hackathon.Value = unHackathon.HeureDebut.ToTimeSpan(DateOnly.Parse("2000-01-01"));
             }
         }
     }
