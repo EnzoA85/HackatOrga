@@ -47,6 +47,8 @@
             this.lblMinute = new System.Windows.Forms.Label();
             this.lblMessage = new System.Windows.Forms.Label();
             this.btnRetour = new System.Windows.Forms.Button();
+            this.lblIntervenant = new System.Windows.Forms.Label();
+            this.cbxIntervenant = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numDuree)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,7 +174,7 @@
             // 
             // btnEnregistrer
             // 
-            this.btnEnregistrer.Location = new System.Drawing.Point(288, 305);
+            this.btnEnregistrer.Location = new System.Drawing.Point(289, 357);
             this.btnEnregistrer.Name = "btnEnregistrer";
             this.btnEnregistrer.Size = new System.Drawing.Size(76, 23);
             this.btnEnregistrer.TabIndex = 16;
@@ -206,7 +208,7 @@
             // 
             // btnRetour
             // 
-            this.btnRetour.Location = new System.Drawing.Point(370, 305);
+            this.btnRetour.Location = new System.Drawing.Point(371, 357);
             this.btnRetour.Name = "btnRetour";
             this.btnRetour.Size = new System.Drawing.Size(75, 23);
             this.btnRetour.TabIndex = 20;
@@ -214,11 +216,30 @@
             this.btnRetour.UseVisualStyleBackColor = true;
             this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
             // 
+            // lblIntervenant
+            // 
+            this.lblIntervenant.AutoSize = true;
+            this.lblIntervenant.Location = new System.Drawing.Point(67, 292);
+            this.lblIntervenant.Name = "lblIntervenant";
+            this.lblIntervenant.Size = new System.Drawing.Size(73, 15);
+            this.lblIntervenant.TabIndex = 21;
+            this.lblIntervenant.Text = "Intervenant :";
+            // 
+            // cbxIntervenant
+            // 
+            this.cbxIntervenant.FormattingEnabled = true;
+            this.cbxIntervenant.Location = new System.Drawing.Point(146, 289);
+            this.cbxIntervenant.Name = "cbxIntervenant";
+            this.cbxIntervenant.Size = new System.Drawing.Size(287, 23);
+            this.cbxIntervenant.TabIndex = 22;
+            // 
             // enregistrerConference
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 340);
+            this.ClientSize = new System.Drawing.Size(457, 392);
+            this.Controls.Add(this.cbxIntervenant);
+            this.Controls.Add(this.lblIntervenant);
             this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.lblMinute);
@@ -268,5 +289,7 @@
         private Label lblMinute;
         private Label lblMessage;
         private Button btnRetour;
+        private Label lblIntervenant;
+        private ComboBox cbxIntervenant;
     }
 }
