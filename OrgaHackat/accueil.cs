@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-=======
 using OrgaHackat.Models;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
->>>>>>> 80afc93db02212b02c9f5eb442109c1b113646bb
 
 namespace OrgaHackat
 {
@@ -16,14 +13,12 @@ namespace OrgaHackat
             InitializeComponent();
         }
 
-<<<<<<< HEAD
         private void btn_hackathons_Click(object sender, EventArgs e)
         {
             hackathons Form1 = new hackathons();
             Form1.Show();
             this.Hide();
         }
-=======
         private void accueil_Load(object sender, EventArgs e)
         {
             bddboudero5Context cnx = new bddboudero5Context();
@@ -47,6 +42,5 @@ namespace OrgaHackat
         {
 
         }
->>>>>>> 80afc93db02212b02c9f5eb442109c1b113646bb
     }
 }

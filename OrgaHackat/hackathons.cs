@@ -18,7 +18,6 @@ namespace OrgaHackat
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
         private void hackathons_Load(object sender, EventArgs e)
         {
             bddboudero5Context cnx = new bddboudero5Context();
@@ -90,14 +89,12 @@ namespace OrgaHackat
                 dtp_datedebut_edit_hackathon.Value = unHackathon.DateDebut.ToDateTime(TimeOnly.Parse("10:00 PM"));
                 dtp_datefin_edit_hackathon.Value = unHackathon.DateFin.ToDateTime(TimeOnly.Parse("10:00 PM"));
                 dtp_datelimite_edit_hackathon.Value = unHackathon.DateLimite.ToDateTime(TimeOnly.Parse("10:00 PM"));
-                dtp_heuredebut_edit_hackathon.Value = unHackathon.HeureDebut.ToTimeSpan(DateOnly.Parse("2000-01-01"));
+                //dtp_heuredebut_edit_hackathon.Value = unHackathon.HeureDebut.ToTimeSpan(DateOnly.Parse("2000-01-01"));
             }
-=======
-
-        private void editHackathon_Click(object sender, EventArgs e)
-        {
-
->>>>>>> 80afc93db02212b02c9f5eb442109c1b113646bb
         }
+        //private void editHackathon_Click(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }
