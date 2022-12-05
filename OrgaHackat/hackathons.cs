@@ -11,13 +11,14 @@ using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
 
 namespace OrgaHackat
-{
+{   
     public partial class hackathons : Form
     {
         public hackathons()
         {
             InitializeComponent();
         }
+<<<<<<< HEAD
         private void hackathons_Load(object sender, EventArgs e)
         {
             bddboudero5Context cnx = new bddboudero5Context();
@@ -91,6 +92,12 @@ namespace OrgaHackat
                 dtp_datelimite_edit_hackathon.Value = unHackathon.DateLimite.ToDateTime(TimeOnly.Parse("10:00 PM"));
                 dtp_heuredebut_edit_hackathon.Value = unHackathon.HeureDebut.ToTimeSpan(DateOnly.Parse("2000-01-01"));
             }
+=======
+
+        private void editHackathon_Click(object sender, EventArgs e)
+        {
+
+>>>>>>> 80afc93db02212b02c9f5eb442109c1b113646bb
         }
     }
 }

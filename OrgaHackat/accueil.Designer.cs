@@ -30,8 +30,9 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btn_hackathons = new System.Windows.Forms.Button();
-            this.btn_atelier = new System.Windows.Forms.Button();
+            this.btninitiation = new System.Windows.Forms.Button();
             this.btn_conference = new System.Windows.Forms.Button();
+            this.btnImprimer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -55,15 +56,16 @@
             this.btn_hackathons.UseVisualStyleBackColor = true;
             this.btn_hackathons.Click += new System.EventHandler(this.btn_hackathons_Click);
             // 
-            // btn_atelier
+            // btninitiation
             // 
-            this.btn_atelier.Font = new System.Drawing.Font("Segoe UI Semibold", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_atelier.Location = new System.Drawing.Point(290, 308);
-            this.btn_atelier.Name = "btn_atelier";
-            this.btn_atelier.Size = new System.Drawing.Size(213, 74);
-            this.btn_atelier.TabIndex = 2;
-            this.btn_atelier.Text = "Ateliers";
-            this.btn_atelier.UseVisualStyleBackColor = true;
+            this.btninitiation.Font = new System.Drawing.Font("Segoe UI Semibold", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btninitiation.Location = new System.Drawing.Point(290, 308);
+            this.btninitiation.Name = "btninitiation";
+            this.btninitiation.Size = new System.Drawing.Size(213, 74);
+            this.btninitiation.TabIndex = 2;
+            this.btninitiation.Text = "Initiation";
+            this.btninitiation.UseVisualStyleBackColor = true;
+            this.btninitiation.Click += new System.EventHandler(this.btninitiation_Click);
             // 
             // btn_conference
             // 
@@ -74,18 +76,31 @@
             this.btn_conference.TabIndex = 3;
             this.btn_conference.Text = "Conférences";
             this.btn_conference.UseVisualStyleBackColor = true;
+            this.btn_conference.Click += new System.EventHandler(this.btn_conference_Click);
+            // 
+            // btnImprimer
+            // 
+            this.btnImprimer.Location = new System.Drawing.Point(548, 173);
+            this.btnImprimer.Name = "btnImprimer";
+            this.btnImprimer.Size = new System.Drawing.Size(229, 85);
+            this.btnImprimer.TabIndex = 4;
+            this.btnImprimer.Text = "Imprimer";
+            this.btnImprimer.UseVisualStyleBackColor = true;
+            this.btnImprimer.Click += new System.EventHandler(this.btnImprimer_Click);
             // 
             // accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnImprimer);
             this.Controls.Add(this.btn_conference);
-            this.Controls.Add(this.btn_atelier);
+            this.Controls.Add(this.btninitiation);
             this.Controls.Add(this.btn_hackathons);
             this.Controls.Add(this.label1);
             this.Name = "accueil";
-            this.Text = "la";
+            this.Text = "HackatAgence";
+            this.Load += new System.EventHandler(this.accueil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,7 +110,8 @@
 
         private Label label1;
         private Button btn_hackathons;
-        private Button btn_atelier;
+        private Button btninitiation;
         private Button btn_conference;
+        private Button btnImprimer;
     }
 }
