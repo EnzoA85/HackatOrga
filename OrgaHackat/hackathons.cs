@@ -56,6 +56,14 @@ namespace OrgaHackat
                 if (cnx.Hackathons != null)
                 {
                     MessageBox.Show("Hackathon ajouter");
+                    tbx_theme_hackathon.Text = "";
+                    tbx_description_hackathon.Text = "";
+                    tbx_image_hackathon.Text = "";
+                    tbx_lieu_hackathon.Text = "";
+                    tbx_rue_hackathon.Text = "";
+                    tbx_ville_hackathon.Text = "";
+                    tbx_cp_hackathon.Text = "";
+                    npd_nbplace_hackathon.TabIndex = 0;
                 }
                 else
                 {
