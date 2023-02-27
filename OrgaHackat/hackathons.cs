@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
 
 namespace OrgaHackat
-{   
+{
     public partial class hackathons : Form
     {
         public hackathons()
@@ -77,6 +77,54 @@ namespace OrgaHackat
             accueil Form1 = new accueil();
             Form1.Show();
             this.Hide();
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bddboudero5Context cnx = new bddboudero5Context();
+            //On récupère le Hackathon choisi dans la liste
+            Hackathon unHackathon = (Hackathon)cbx_choixHackathon.SelectedItem;
+            tbx_theme_edit_hackathon.Text = unHackathon.Theme;
+            tbx_image_edit_hackathon.Text = unHackathon.Image;
+            tbx_rue_edit_hackathon.Text = unHackathon.Rue;
+            tbx_ville_edit_hackathon.Text = unHackathon.Ville;
+            tbx_cp_edit_hackathon.Text = unHackathon.CodePostal;
+            tbx_lieu_edit_hackathon.Text = unHackathon.Lieu;
+            tbx_description_edit_hackathon.Text = unHackathon.Description;
+            npd_nbplace_edit_hackathon.Value = Convert.ToDecimal(unHackathon.NbPlaces);
+            dtp_datedebut_edit_hackathon.Value = unHackathon.DateDebut.ToDateTime(TimeOnly.Parse("10:00 PM"));
+            dtp_datefin_edit_hackathon.Value = unHackathon.DateFin.ToDateTime(TimeOnly.Parse("10:00 PM"));
+            dtp_datelimite_edit_hackathon.Value = unHackathon.DateLimite.ToDateTime(TimeOnly.Parse("10:00 PM"));
+        }
+
+        private void Modifier_Click(object sender, EventArgs e)
+        {
+            bddboudero5Context cnx = new bddboudero5Context();
+            Hackathon unHackathon = (Hackathon)cbx_choixHackathon.SelectedItem;
+            unHackathon.Theme = tbx_theme_edit_hackathon.Text;
+            unHackathon.Description = tbx_description_edit_hackathon.Text;
+            unHackathon.Image = tbx_image_edit_hackathon.Text;
+            unHackathon.Lieu = tbx_lieu_edit_hackathon.Text;
+            unHackathon.Rue = tbx_rue_edit_hackathon.Text;
+            unHackathon.Ville = tbx_ville_edit_hackathon.Text;
+            unHackathon.CodePostal = tbx_cp_edit_hackathon.Text;
+            unHackathon.NbPlaces = Convert.ToInt32(npd_nbplace_edit_hackathon.Text);
+            unHackathon.DateDebut = DateOnly.FromDateTime(Convert.ToDateTime(dtp_datedebut_edit_hackathon.Value));
+            unHackathon.DateFin = DateOnly.FromDateTime(Convert.ToDateTime(dtp_datefin_edit_hackathon.Value));
+            unHackathon.DateLimite = DateOnly.FromDateTime(Convert.ToDateTime(dtp_datelimite_edit_hackathon.Value));
+            unHackathon.HeureDebut = TimeOnly.FromDateTime(Convert.ToDateTime(dtp_heuredebut_edit_hackathon.Value));
+            unHackathon.HeureFin = TimeOnly.FromDateTime(Convert.ToDateTime(dtp_heuredebut_edit_hackathon.Value));
+
+            cnx.Hackathons.Update(unHackathon);
+            cnx.SaveChanges();
+
+            if (cnx.Hackathons != null)
+            {
+                MessageBox.Show("Hackathon modifié");
+            }
+            else
+            {
+                MessageBox.Show("Le hackathon n'a pas été modifié, une erreur est survenue");
+            }
         }
     }
 }
