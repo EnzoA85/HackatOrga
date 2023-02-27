@@ -22,6 +22,7 @@ namespace OrgaHackat.Models
         public virtual DbSet<Hackathon> Hackathons { get; set; } = null!;
         public virtual DbSet<Initiation> Initiations { get; set; } = null!;
         public virtual DbSet<Inscription> Inscriptions { get; set; } = null!;
+        public virtual DbSet<Intervenant> Intervenants { get; set; } = null!;
         public virtual DbSet<MessengerMessage> MessengerMessages { get; set; } = null!;
         public virtual DbSet<Participant> Participants { get; set; } = null!;
         public virtual DbSet<Utilisateur> Utilisateurs { get; set; } = null!;
@@ -46,10 +47,16 @@ namespace OrgaHackat.Models
 
                 entity.UseCollation("utf8mb4_unicode_ci");
 
+                entity.HasIndex(e => e.IntervenantId, "IDX_911533C8AB9A1716");
+
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
                     .ValueGeneratedNever()
                     .HasColumnName("id");
+
+                entity.Property(e => e.IntervenantId)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("intervenant_id");
 
                 entity.Property(e => e.Theme)
                     .HasMaxLength(255)
@@ -59,6 +66,12 @@ namespace OrgaHackat.Models
                     .WithOne(p => p.Conference)
                     .HasForeignKey<Conference>(d => d.Id)
                     .HasConstraintName("FK_911533C8BF396750");
+
+                entity.HasOne(d => d.Intervenant)
+                    .WithMany(p => p.Conferences)
+                    .HasForeignKey(d => d.IntervenantId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_911533C8AB9A1716");
             });
 
             modelBuilder.Entity<DoctrineMigrationVersion>(entity =>
@@ -246,6 +259,25 @@ namespace OrgaHackat.Models
                     .HasForeignKey(d => d.IdUtilisateur)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_5E90F6D65D419CCB");
+            });
+
+            modelBuilder.Entity<Intervenant>(entity =>
+            {
+                entity.ToTable("intervenant");
+
+                entity.UseCollation("utf8mb4_unicode_ci");
+
+                entity.Property(e => e.Id)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("id");
+
+                entity.Property(e => e.Nom)
+                    .HasMaxLength(255)
+                    .HasColumnName("nom");
+
+                entity.Property(e => e.Prenom)
+                    .HasMaxLength(255)
+                    .HasColumnName("prenom");
             });
 
             modelBuilder.Entity<MessengerMessage>(entity =>
