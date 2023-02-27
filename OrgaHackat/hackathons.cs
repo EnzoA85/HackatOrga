@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
 
 namespace OrgaHackat
-{
+{   
     public partial class hackathons : Form
     {
         public hackathons()
@@ -97,42 +97,8 @@ namespace OrgaHackat
                 dtp_datedebut_edit_hackathon.Value = unHackathon.DateDebut.ToDateTime(TimeOnly.Parse("10:00 PM"));
                 dtp_datefin_edit_hackathon.Value = unHackathon.DateFin.ToDateTime(TimeOnly.Parse("10:00 PM"));
                 dtp_datelimite_edit_hackathon.Value = unHackathon.DateLimite.ToDateTime(TimeOnly.Parse("10:00 PM"));
-                dtp_heuredebut_edit_hackathon.Value = Convert.ToDateTime(unHackathon.HeureDebut.ToShortTimeString());
-                dtp_heurefin_edit_hackathon.Value = Convert.ToDateTime(unHackathon.HeureFin.ToShortTimeString());
+                //dtp_heuredebut_edit_hackathon.Value = unHackathon.HeureDebut.ToTimeSpan(DateOnly.Parse("2000-01-01"));
             }
-        }
-
-        private void Modifier_Click(object sender, EventArgs e)
-        {
-            bddboudero5Context cnx = new bddboudero5Context();
-            Hackathon hackathonchoisit = (Hackathon)cbx_choixHackathon.SelectedItem;
-            int idhackathon = hackathonchoisit.Id;
-            Hackathon hackathonedit = cnx.Hackathons.Find(idhackathon);
-            {
-                hackathonedit.Theme = tbx_theme_hackathon.Text;
-                hackathonedit.Description = tbx_description_hackathon.Text;
-                hackathonedit.Image = tbx_image_hackathon.Text;
-                hackathonedit.Lieu = tbx_lieu_hackathon.Text;
-                hackathonedit.Rue = tbx_rue_hackathon.Text;
-                hackathonedit.Ville = tbx_ville_hackathon.Text;
-                hackathonedit.CodePostal = tbx_cp_hackathon.Text;
-                hackathonedit.NbPlaces = (int?)Convert.ToDecimal(npd_nbplace_hackathon.Value);
-                hackathonedit.DateDebut = DateOnly.FromDateTime(Convert.ToDateTime(dtp_datedebut_hackathon.Value));
-                hackathonedit.DateFin = DateOnly.FromDateTime(Convert.ToDateTime(dtp_datefin_hackathon.Value));
-                hackathonedit.DateLimite = DateOnly.FromDateTime(Convert.ToDateTime(dtp_datelimite_hackathon.Value));
-                hackathonedit.HeureDebut = TimeOnly.FromDateTime(Convert.ToDateTime(dtp_heuredebut_hackathon.Value));
-                hackathonedit.HeureFin = TimeOnly.FromDateTime(Convert.ToDateTime(dtp_heuredebut_hackathon.Value));
-                cnx.Hackathons.Update(hackathonedit);
-                cnx.SaveChanges();
-                if (cnx.Hackathons != null)
-                {
-                    MessageBox.Show("Hackathon modifier");
-                }
-                else
-                {
-                    MessageBox.Show("Le hackathon n'a pas été modifier, une erreur est survenue");
-                }
-            };
         }
     }
 }
