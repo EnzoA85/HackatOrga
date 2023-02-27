@@ -691,7 +691,6 @@
             this.cbx_choixHackathon.Name = "cbx_choixHackathon";
             this.cbx_choixHackathon.Size = new System.Drawing.Size(259, 23);
             this.cbx_choixHackathon.TabIndex = 1;
-            this.cbx_choixHackathon.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // lbl_choixHackathon
             // 
