@@ -30,6 +30,7 @@
         {
             this.tbc_hackathons = new System.Windows.Forms.TabControl();
             this.ajouterHackathon = new System.Windows.Forms.TabPage();
+            this.lbl_ajouter_hackathon = new System.Windows.Forms.Label();
             this.gbx_horaire_hackathon = new System.Windows.Forms.GroupBox();
             this.dtp_heurefin_hackathon = new System.Windows.Forms.DateTimePicker();
             this.dtp_heuredebut_hackathon = new System.Windows.Forms.DateTimePicker();
@@ -64,6 +65,17 @@
             this.lbl_nbPlace_hackathons = new System.Windows.Forms.Label();
             this.btn_ajouter_hackathon = new System.Windows.Forms.Button();
             this.editHackathon = new System.Windows.Forms.TabPage();
+            this.Modifier = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dtp_heurefin_edit_hackathon = new System.Windows.Forms.DateTimePicker();
+            this.dtp_heuredebut_edit_hackathon = new System.Windows.Forms.DateTimePicker();
+            this.dtp_datefin_edit_hackathon = new System.Windows.Forms.DateTimePicker();
+            this.dtp_datedebut_edit_hackathon = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tbx_lieu_edit_hackathon = new System.Windows.Forms.TextBox();
             this.tbx_cp_edit_hackathon = new System.Windows.Forms.TextBox();
@@ -91,18 +103,6 @@
             this.btn_retour_accueil = new System.Windows.Forms.Button();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dtp_heurefin_edit_hackathon = new System.Windows.Forms.DateTimePicker();
-            this.dtp_heuredebut_edit_hackathon = new System.Windows.Forms.DateTimePicker();
-            this.dtp_datefin_edit_hackathon = new System.Windows.Forms.DateTimePicker();
-            this.dtp_datedebut_edit_hackathon = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.lbl_ajouter_hackathon = new System.Windows.Forms.Label();
-            this.Modifier = new System.Windows.Forms.Button();
             this.tbc_hackathons.SuspendLayout();
             this.ajouterHackathon.SuspendLayout();
             this.gbx_horaire_hackathon.SuspendLayout();
@@ -110,10 +110,10 @@
             this.gbx_informations_hackathon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.npd_nbplace_hackathon)).BeginInit();
             this.editHackathon.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_nbplace_edit_hackathon)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbc_hackathons
@@ -140,6 +140,16 @@
             this.ajouterHackathon.TabIndex = 0;
             this.ajouterHackathon.Text = "Ajouter";
             this.ajouterHackathon.UseVisualStyleBackColor = true;
+            // 
+            // lbl_ajouter_hackathon
+            // 
+            this.lbl_ajouter_hackathon.AutoSize = true;
+            this.lbl_ajouter_hackathon.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_ajouter_hackathon.Location = new System.Drawing.Point(254, 5);
+            this.lbl_ajouter_hackathon.Name = "lbl_ajouter_hackathon";
+            this.lbl_ajouter_hackathon.Size = new System.Drawing.Size(294, 37);
+            this.lbl_ajouter_hackathon.TabIndex = 14;
+            this.lbl_ajouter_hackathon.Text = "Ajouter un hackathon";
             // 
             // gbx_horaire_hackathon
             // 
@@ -372,6 +382,11 @@
             // npd_nbplace_hackathon
             // 
             this.npd_nbplace_hackathon.Location = new System.Drawing.Point(174, 127);
+            this.npd_nbplace_hackathon.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.npd_nbplace_hackathon.Name = "npd_nbplace_hackathon";
             this.npd_nbplace_hackathon.Size = new System.Drawing.Size(279, 23);
             this.npd_nbplace_hackathon.TabIndex = 15;
@@ -473,6 +488,114 @@
             this.editHackathon.TabIndex = 1;
             this.editHackathon.Text = "Modifier";
             this.editHackathon.UseVisualStyleBackColor = true;
+            // 
+            // Modifier
+            // 
+            this.Modifier.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Modifier.Location = new System.Drawing.Point(563, 333);
+            this.Modifier.Name = "Modifier";
+            this.Modifier.Size = new System.Drawing.Size(106, 47);
+            this.Modifier.TabIndex = 16;
+            this.Modifier.Text = "Modifier";
+            this.Modifier.UseVisualStyleBackColor = true;
+            this.Modifier.Click += new System.EventHandler(this.Modifier_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dtp_heurefin_edit_hackathon);
+            this.groupBox3.Controls.Add(this.dtp_heuredebut_edit_hackathon);
+            this.groupBox3.Controls.Add(this.dtp_datefin_edit_hackathon);
+            this.groupBox3.Controls.Add(this.dtp_datedebut_edit_hackathon);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Location = new System.Drawing.Point(6, 296);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(459, 138);
+            this.groupBox3.TabIndex = 15;
+            this.groupBox3.TabStop = false;
+            // 
+            // dtp_heurefin_edit_hackathon
+            // 
+            this.dtp_heurefin_edit_hackathon.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtp_heurefin_edit_hackathon.Location = new System.Drawing.Point(354, 102);
+            this.dtp_heurefin_edit_hackathon.Name = "dtp_heurefin_edit_hackathon";
+            this.dtp_heurefin_edit_hackathon.Size = new System.Drawing.Size(79, 23);
+            this.dtp_heurefin_edit_hackathon.TabIndex = 20;
+            // 
+            // dtp_heuredebut_edit_hackathon
+            // 
+            this.dtp_heuredebut_edit_hackathon.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtp_heuredebut_edit_hackathon.Location = new System.Drawing.Point(354, 53);
+            this.dtp_heuredebut_edit_hackathon.Name = "dtp_heuredebut_edit_hackathon";
+            this.dtp_heuredebut_edit_hackathon.Size = new System.Drawing.Size(79, 23);
+            this.dtp_heuredebut_edit_hackathon.TabIndex = 14;
+            // 
+            // dtp_datefin_edit_hackathon
+            // 
+            this.dtp_datefin_edit_hackathon.Location = new System.Drawing.Point(113, 104);
+            this.dtp_datefin_edit_hackathon.Name = "dtp_datefin_edit_hackathon";
+            this.dtp_datefin_edit_hackathon.Size = new System.Drawing.Size(106, 23);
+            this.dtp_datefin_edit_hackathon.TabIndex = 19;
+            // 
+            // dtp_datedebut_edit_hackathon
+            // 
+            this.dtp_datedebut_edit_hackathon.Location = new System.Drawing.Point(113, 53);
+            this.dtp_datedebut_edit_hackathon.Name = "dtp_datedebut_edit_hackathon";
+            this.dtp_datedebut_edit_hackathon.Size = new System.Drawing.Size(106, 23);
+            this.dtp_datedebut_edit_hackathon.TabIndex = 13;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(231, 106);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(95, 21);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Heure de fin";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(231, 53);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(117, 21);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "Heure de début";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(6, 104);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(85, 21);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "Date de fin";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(171, 11);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(84, 30);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "Horaire";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label16.Location = new System.Drawing.Point(6, 53);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(107, 21);
+            this.label16.TabIndex = 10;
+            this.label16.Text = "Date de début";
             // 
             // groupBox2
             // 
@@ -608,6 +731,11 @@
             // nud_nbplace_edit_hackathon
             // 
             this.nud_nbplace_edit_hackathon.Location = new System.Drawing.Point(174, 127);
+            this.nud_nbplace_edit_hackathon.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.nud_nbplace_edit_hackathon.Name = "nud_nbplace_edit_hackathon";
             this.nud_nbplace_edit_hackathon.Size = new System.Drawing.Size(279, 23);
             this.nud_nbplace_edit_hackathon.TabIndex = 15;
@@ -713,123 +841,6 @@
             this.btn_retour_accueil.UseVisualStyleBackColor = true;
             this.btn_retour_accueil.Click += new System.EventHandler(this.btn_retour_accueil_Click);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dtp_heurefin_edit_hackathon);
-            this.groupBox3.Controls.Add(this.dtp_heuredebut_edit_hackathon);
-            this.groupBox3.Controls.Add(this.dtp_datefin_edit_hackathon);
-            this.groupBox3.Controls.Add(this.dtp_datedebut_edit_hackathon);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Location = new System.Drawing.Point(6, 296);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(459, 138);
-            this.groupBox3.TabIndex = 15;
-            this.groupBox3.TabStop = false;
-            // 
-            // dtp_heurefin_edit_hackathon
-            // 
-            this.dtp_heurefin_edit_hackathon.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtp_heurefin_edit_hackathon.Location = new System.Drawing.Point(354, 102);
-            this.dtp_heurefin_edit_hackathon.Name = "dtp_heurefin_edit_hackathon";
-            this.dtp_heurefin_edit_hackathon.Size = new System.Drawing.Size(79, 23);
-            this.dtp_heurefin_edit_hackathon.TabIndex = 20;
-            // 
-            // dtp_heuredebut_edit_hackathon
-            // 
-            this.dtp_heuredebut_edit_hackathon.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtp_heuredebut_edit_hackathon.Location = new System.Drawing.Point(354, 53);
-            this.dtp_heuredebut_edit_hackathon.Name = "dtp_heuredebut_edit_hackathon";
-            this.dtp_heuredebut_edit_hackathon.Size = new System.Drawing.Size(79, 23);
-            this.dtp_heuredebut_edit_hackathon.TabIndex = 14;
-            // 
-            // dtp_datefin_edit_hackathon
-            // 
-            this.dtp_datefin_edit_hackathon.Location = new System.Drawing.Point(113, 104);
-            this.dtp_datefin_edit_hackathon.Name = "dtp_datefin_edit_hackathon";
-            this.dtp_datefin_edit_hackathon.Size = new System.Drawing.Size(106, 23);
-            this.dtp_datefin_edit_hackathon.TabIndex = 19;
-            // 
-            // dtp_datedebut_edit_hackathon
-            // 
-            this.dtp_datedebut_edit_hackathon.Location = new System.Drawing.Point(113, 53);
-            this.dtp_datedebut_edit_hackathon.Name = "dtp_datedebut_edit_hackathon";
-            this.dtp_datedebut_edit_hackathon.Size = new System.Drawing.Size(106, 23);
-            this.dtp_datedebut_edit_hackathon.TabIndex = 13;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(231, 106);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(95, 21);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "Heure de fin";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(231, 53);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(117, 21);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "Heure de début";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(6, 104);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(85, 21);
-            this.label14.TabIndex = 12;
-            this.label14.Text = "Date de fin";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(171, 11);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(84, 30);
-            this.label15.TabIndex = 11;
-            this.label15.Text = "Horaire";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(6, 53);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(107, 21);
-            this.label16.TabIndex = 10;
-            this.label16.Text = "Date de début";
-            // 
-            // lbl_ajouter_hackathon
-            // 
-            this.lbl_ajouter_hackathon.AutoSize = true;
-            this.lbl_ajouter_hackathon.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_ajouter_hackathon.Location = new System.Drawing.Point(254, 5);
-            this.lbl_ajouter_hackathon.Name = "lbl_ajouter_hackathon";
-            this.lbl_ajouter_hackathon.Size = new System.Drawing.Size(294, 37);
-            this.lbl_ajouter_hackathon.TabIndex = 14;
-            this.lbl_ajouter_hackathon.Text = "Ajouter un hackathon";
-            // 
-            // Modifier
-            // 
-            this.Modifier.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Modifier.Location = new System.Drawing.Point(563, 333);
-            this.Modifier.Name = "Modifier";
-            this.Modifier.Size = new System.Drawing.Size(106, 47);
-            this.Modifier.TabIndex = 16;
-            this.Modifier.Text = "Modifier";
-            this.Modifier.UseVisualStyleBackColor = true;
-            // 
             // hackathons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -852,13 +863,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.npd_nbplace_hackathon)).EndInit();
             this.editHackathon.ResumeLayout(false);
             this.editHackathon.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_nbplace_edit_hackathon)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
