@@ -54,6 +54,7 @@
             btn_hackathons.Text = "Hackathons";
             btn_hackathons.UseVisualStyleBackColor = true;
             btn_hackathons.Click += btn_hackathons_Click;
+
             // 
             // btninitiation
             // 

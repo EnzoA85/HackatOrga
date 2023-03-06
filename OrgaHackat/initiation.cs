@@ -1,15 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿
 using OrgaHackat.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace OrgaHackat
 {
@@ -25,7 +16,7 @@ namespace OrgaHackat
             bddboudero5Context cnx = new bddboudero5Context();
             cbxHackathons.DataSource = cnx.Hackathons.ToList();
             cbxHackathons.DisplayMember = "Theme";
-            cbxHackathons.ValueMember = "Id";
+            cbxHackathons.ValueMember = "Id"; 
 
 
         }
@@ -54,10 +45,25 @@ namespace OrgaHackat
             Initiation InInitiation = new Initiation()
             {
                 Id = EvInitiation.Id,
-                NbPlaceLimite = Convert.ToInt32(numDuree.Value)
+                NbPlaceLimite = Convert.ToInt32(numNbPlaces.Value)
             };
             cnx.Initiations.Add(InInitiation);
             cnx.SaveChanges();
+
+            tbxLibelle.ResetText();
+            tbxSalle.ResetText();
+            numNbPlaces.ResetText();
+            numDuree.ResetText();
+            MessageBox.Show("Enregistré !");
+        }
+
+
+
+        private void btnretour_Click(object sender, EventArgs e)
+        {
+            accueil FormAccueil = new accueil();
+            FormAccueil.Show();
+            this.Hide();
         }
     }
 }
