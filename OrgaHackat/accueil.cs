@@ -35,5 +35,12 @@ namespace OrgaHackat
         {
 
         }
+
+        private void btn_hackathons_Click(object sender, EventArgs e)
+        {
+            hackathons Form1 = new hackathons();
+            Form1.Show();
+            this.Hide();
+        }
     }
 }
