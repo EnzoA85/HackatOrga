@@ -191,7 +191,7 @@ namespace OrgaHackat
         {
             bddboudero5Context cnx = new bddboudero5Context();
             Hackathon unHackathon = (Hackathon)cbx_HackathonRem.SelectedItem;
-            var  lesInscriptions = cnx.Inscriptions.Where(ins => ins.IdHackathonNavigation == unHackathon);
+            var lesInscriptions = cnx.Inscriptions.Where(ins => ins.IdHackathonNavigation == unHackathon);
             cnx.Inscriptions.RemoveRange(lesInscriptions);
             cnx.Hackathons.Remove(unHackathon);
             cnx.SaveChanges();

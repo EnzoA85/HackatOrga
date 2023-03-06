@@ -100,22 +100,14 @@
             label6 = new Label();
             cbx_choixHackathon = new ComboBox();
             lbl_choixHackathon = new Label();
-<<<<<<< HEAD
             remHackathon = new TabPage();
             btn_HackathomRem = new Button();
             cbx_HackathonRem = new ComboBox();
             lbl_HackathonRem = new Label();
-=======
-            imprParticipants = new TabPage();
-            lbxParticipants = new ListBox();
-            btnImprParticipants = new Button();
-            label18 = new Label();
-            label17 = new Label();
-            cbx_choixHackathon2 = new ComboBox();
->>>>>>> imprimer
             btn_retour_accueil = new Button();
             helpProvider1 = new HelpProvider();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            tabPage1 = new TabPage();
             tbc_hackathons.SuspendLayout();
             ajouterHackathon.SuspendLayout();
             gbx_horaire_hackathon.SuspendLayout();
@@ -127,22 +119,15 @@
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)npd_nbplace_edit_hackathon).BeginInit();
-<<<<<<< HEAD
             remHackathon.SuspendLayout();
-=======
-            imprParticipants.SuspendLayout();
->>>>>>> imprimer
             SuspendLayout();
             // 
             // tbc_hackathons
             // 
             tbc_hackathons.Controls.Add(ajouterHackathon);
             tbc_hackathons.Controls.Add(editHackathon);
-<<<<<<< HEAD
             tbc_hackathons.Controls.Add(remHackathon);
-=======
-            tbc_hackathons.Controls.Add(imprParticipants);
->>>>>>> imprimer
+            tbc_hackathons.Controls.Add(tabPage1);
             tbc_hackathons.Location = new Point(12, 3);
             tbc_hackathons.Name = "tbc_hackathons";
             tbc_hackathons.SelectedIndex = 0;
@@ -845,7 +830,6 @@
             lbl_choixHackathon.TabIndex = 0;
             lbl_choixHackathon.Text = "Choisir un hackathon à modifier";
             // 
-<<<<<<< HEAD
             // remHackathon
             // 
             remHackathon.Controls.Add(btn_HackathomRem);
@@ -888,70 +872,6 @@
             lbl_HackathonRem.Size = new Size(252, 21);
             lbl_HackathonRem.TabIndex = 1;
             lbl_HackathonRem.Text = "Choisir un hackathon à supprimer :";
-=======
-            // imprParticipants
-            // 
-            imprParticipants.Controls.Add(lbxParticipants);
-            imprParticipants.Controls.Add(btnImprParticipants);
-            imprParticipants.Controls.Add(label18);
-            imprParticipants.Controls.Add(label17);
-            imprParticipants.Controls.Add(cbx_choixHackathon2);
-            imprParticipants.Location = new Point(4, 24);
-            imprParticipants.Name = "imprParticipants";
-            imprParticipants.Padding = new Padding(3);
-            imprParticipants.Size = new Size(768, 440);
-            imprParticipants.TabIndex = 2;
-            imprParticipants.Text = "Imprimer Participants";
-            imprParticipants.UseVisualStyleBackColor = true;
-            // 
-            // lbxParticipants
-            // 
-            lbxParticipants.FormattingEnabled = true;
-            lbxParticipants.ItemHeight = 15;
-            lbxParticipants.Location = new Point(17, 88);
-            lbxParticipants.Name = "lbxParticipants";
-            lbxParticipants.Size = new Size(171, 289);
-            lbxParticipants.TabIndex = 18;
-            // 
-            // btnImprParticipants
-            // 
-            btnImprParticipants.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            btnImprParticipants.Location = new Point(17, 387);
-            btnImprParticipants.Name = "btnImprParticipants";
-            btnImprParticipants.Size = new Size(171, 47);
-            btnImprParticipants.TabIndex = 17;
-            btnImprParticipants.Text = "Imprimer";
-            btnImprParticipants.UseVisualStyleBackColor = true;
-            btnImprParticipants.Click += btnImprParticipants_Click;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Location = new Point(17, 70);
-            label18.Name = "label18";
-            label18.Size = new Size(72, 15);
-            label18.TabIndex = 5;
-            label18.Text = "Participants:";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(17, 24);
-            label17.Name = "label17";
-            label17.Size = new Size(403, 21);
-            label17.TabIndex = 3;
-            label17.Text = "Choisir un hackathon pour l'impression des participants :";
-            // 
-            // cbx_choixHackathon2
-            // 
-            cbx_choixHackathon2.FormattingEnabled = true;
-            cbx_choixHackathon2.Location = new Point(426, 24);
-            cbx_choixHackathon2.Name = "cbx_choixHackathon2";
-            cbx_choixHackathon2.Size = new Size(259, 23);
-            cbx_choixHackathon2.TabIndex = 2;
-            cbx_choixHackathon2.SelectedIndexChanged += cbx_choixHackathon2_SelectedIndexChanged;
->>>>>>> imprimer
             // 
             // btn_retour_accueil
             // 
@@ -963,6 +883,16 @@
             btn_retour_accueil.Text = "Accueil";
             btn_retour_accueil.UseVisualStyleBackColor = true;
             btn_retour_accueil.Click += btn_retour_accueil_Click;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(768, 440);
+            tabPage1.TabIndex = 3;
+            tabPage1.Text = "tabPage1";
+            tabPage1.UseVisualStyleBackColor = true;
             // 
             // hackathons
             // 
@@ -993,13 +923,8 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)npd_nbplace_edit_hackathon).EndInit();
-<<<<<<< HEAD
             remHackathon.ResumeLayout(false);
             remHackathon.PerformLayout();
-=======
-            imprParticipants.ResumeLayout(false);
-            imprParticipants.PerformLayout();
->>>>>>> imprimer
             ResumeLayout(false);
         }
 
@@ -1085,6 +1010,7 @@
         private Button btn_HackathomRem;
         private Label lbl_HackathonRem;
         private ComboBox cbx_HackathonRem;
+        private TabPage tabPage1;
 =======
         private TabPage imprParticipants;
         private ComboBox cbx_choixHackathon2;
