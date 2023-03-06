@@ -101,6 +101,7 @@
             cbx_choixHackathon = new ComboBox();
             lbl_choixHackathon = new Label();
             imprParticipants = new TabPage();
+            lbxParticipants = new ListBox();
             btnImprParticipants = new Button();
             label18 = new Label();
             label17 = new Label();
@@ -108,7 +109,6 @@
             btn_retour_accueil = new Button();
             helpProvider1 = new HelpProvider();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            lbxParticipants = new ListBox();
             tbc_hackathons.SuspendLayout();
             ajouterHackathon.SuspendLayout();
             gbx_horaire_hackathon.SuspendLayout();
@@ -845,9 +845,17 @@
             imprParticipants.Text = "Imprimer Participants";
             imprParticipants.UseVisualStyleBackColor = true;
             // 
+            // lbxParticipants
+            // 
+            lbxParticipants.FormattingEnabled = true;
+            lbxParticipants.ItemHeight = 15;
+            lbxParticipants.Location = new Point(17, 88);
+            lbxParticipants.Name = "lbxParticipants";
+            lbxParticipants.Size = new Size(171, 289);
+            lbxParticipants.TabIndex = 18;
+            // 
             // btnImprParticipants
             // 
-            btnImprParticipants.Enabled = false;
             btnImprParticipants.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
             btnImprParticipants.Location = new Point(17, 387);
             btnImprParticipants.Name = "btnImprParticipants";
@@ -855,6 +863,7 @@
             btnImprParticipants.TabIndex = 17;
             btnImprParticipants.Text = "Imprimer";
             btnImprParticipants.UseVisualStyleBackColor = true;
+            btnImprParticipants.Click += btnImprParticipants_Click;
             // 
             // label18
             // 
@@ -894,15 +903,6 @@
             btn_retour_accueil.Text = "Accueil";
             btn_retour_accueil.UseVisualStyleBackColor = true;
             btn_retour_accueil.Click += btn_retour_accueil_Click;
-            // 
-            // lbxParticipants
-            // 
-            lbxParticipants.FormattingEnabled = true;
-            lbxParticipants.ItemHeight = 15;
-            lbxParticipants.Location = new Point(17, 88);
-            lbxParticipants.Name = "lbxParticipants";
-            lbxParticipants.Size = new Size(171, 289);
-            lbxParticipants.TabIndex = 18;
             // 
             // hackathons
             // 
