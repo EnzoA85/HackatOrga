@@ -1,4 +1,7 @@
-﻿using OrgaHackat.Models;
+﻿using iTextSharp.text.pdf;
+using iTextSharp.text;
+using Microsoft.VisualBasic;
+using OrgaHackat.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +31,10 @@ namespace OrgaHackat
             cbx_HackathonRem.DataSource = cnx.Hackathons.ToList();
             cbx_HackathonRem.DisplayMember = "Theme";
             cbx_HackathonRem.ValueMember = "Id";
+
+            cbx_choixHackathon2.DataSource = cnx.Hackathons.ToList();
+            cbx_choixHackathon2.DisplayMember = "Theme";
+            cbx_choixHackathon2.ValueMember = "Id";
         }
 
         private void btn_ajouter_Click(object sender, EventArgs e)
@@ -88,6 +95,31 @@ namespace OrgaHackat
             Form1.Show();
             this.Hide();
         }
+
+        private void cbx_choixHackathon2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Collection<String> lesParticipants = new Collection<String>();
+
+            bddboudero5Context cnx = new bddboudero5Context();
+            //On récupère le Hackathon choisi dans la liste
+            Hackathon unHackathon = (Hackathon)cbx_choixHackathon2.SelectedItem;
+            // On récupère les inscriptions
+            ICollection<Inscription> LesInscriptions = cnx.Inscriptions.Where(ins => ins.IdHackathon == unHackathon.Id).ToList();
+
+            // on récupère tt les noms + prenom des utilisateurs pour les mettres dans le tableau lesParticipants
+            foreach (Inscription uneInscription in LesInscriptions)
+            {
+
+                Utilisateur unUtilisateur = cnx.Utilisateurs.Find(uneInscription.IdUtilisateur);
+                lesParticipants.Add(unUtilisateur.Nom + ' ' + unUtilisateur.Prenom);
+            };
+
+            // remplir le tableau des participants avec les participants (nom + prenom)
+            lbxParticipants.DataSource = lesParticipants;
+
+
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             bddboudero5Context cnx = new bddboudero5Context();
@@ -169,6 +201,40 @@ namespace OrgaHackat
             cbx_HackathonRem.DataSource = cnx.Hackathons.ToList();
             cbx_HackathonRem.DisplayMember = "Theme";
             cbx_HackathonRem.ValueMember = "Id";
+        }
+
+        private void btnImprParticipants_Click(object sender, EventArgs e)
+        {
+            bddboudero5Context cnx = new bddboudero5Context();
+            Hackathon unHackathon = (Hackathon)cbx_choixHackathon2.SelectedItem;
+            Document unDocument = new Document();
+            PdfWriter.GetInstance(unDocument, new FileStream("..\\..\\..\\..\\..\\Liste_Inscriptions.pdf", FileMode.Create));
+            unDocument.Open();
+
+            iTextSharp.text.Font myFont = FontFactory.GetFont("Arial", 20, iTextSharp.text.Font.BOLD);
+            Paragraph titre = new Paragraph("Liste des inscrits pour " + unHackathon.Theme, myFont);
+            titre.Alignment = Element.ALIGN_CENTER;
+            titre.SpacingAfter = 12;
+            unDocument.Add(titre);
+            ICollection<Inscription> LesInscriptions = cnx.Inscriptions.Where(ins => ins.IdHackathon == unHackathon.Id).ToList();
+
+            PdfPTable tableau = new PdfPTable(2);
+
+            iTextSharp.text.Font FontNom = FontFactory.GetFont("Arial", 14, iTextSharp.text.Font.BOLD);
+            Paragraph nom = new Paragraph("Nom", FontNom);
+            tableau.AddCell(nom);
+            nom = new Paragraph("Prenom", FontNom);
+            tableau.AddCell(nom);
+
+            foreach (Inscription uneInscription in LesInscriptions)
+            {
+                Utilisateur unUtilisateur = cnx.Utilisateurs.Find(uneInscription.IdUtilisateur);
+                tableau.AddCell(unUtilisateur.Nom);
+                tableau.AddCell(unUtilisateur.Prenom);
+            }
+            unDocument.Add(tableau);
+            //Enregistrement du fichier
+            unDocument.Close();
         }
     }
 }
