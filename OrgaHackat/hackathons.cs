@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.ObjectModel;
 
 namespace OrgaHackat
 {
@@ -24,6 +25,9 @@ namespace OrgaHackat
             cbx_choixHackathon.DataSource = cnx.Hackathons.ToList();
             cbx_choixHackathon.DisplayMember = "Theme";
             cbx_choixHackathon.ValueMember = "Id";
+            cbx_HackathonRem.DataSource = cnx.Hackathons.ToList();
+            cbx_HackathonRem.DisplayMember = "Theme";
+            cbx_HackathonRem.ValueMember = "Id";
         }
 
         private void btn_ajouter_Click(object sender, EventArgs e)
@@ -64,6 +68,12 @@ namespace OrgaHackat
                     tbx_ville_hackathon.Text = "";
                     tbx_cp_hackathon.Text = "";
                     npd_nbplace_hackathon.TabIndex = 0;
+                    cbx_choixHackathon.DataSource = cnx.Hackathons.ToList();
+                    cbx_choixHackathon.DisplayMember = "Theme";
+                    cbx_choixHackathon.ValueMember = "Id";
+                    cbx_HackathonRem.DataSource = cnx.Hackathons.ToList();
+                    cbx_HackathonRem.DisplayMember = "Theme";
+                    cbx_HackathonRem.ValueMember = "Id";
                 }
                 else
                 {
@@ -125,6 +135,40 @@ namespace OrgaHackat
             {
                 MessageBox.Show("Le hackathon n'a pas été modifié, une erreur est survenue");
             }
+        }
+
+        private void cbx_HackathonRem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bddboudero5Context cnx = new bddboudero5Context();
+            //On récupère le Hackathon choisi dans la liste
+            Hackathon unHackathon = (Hackathon)cbx_choixHackathon.SelectedItem;
+            tbx_theme_edit_hackathon.Text = unHackathon.Theme;
+            tbx_image_edit_hackathon.Text = unHackathon.Image;
+            tbx_rue_edit_hackathon.Text = unHackathon.Rue;
+            tbx_ville_edit_hackathon.Text = unHackathon.Ville;
+            tbx_cp_edit_hackathon.Text = unHackathon.CodePostal;
+            tbx_lieu_edit_hackathon.Text = unHackathon.Lieu;
+            tbx_description_edit_hackathon.Text = unHackathon.Description;
+            npd_nbplace_edit_hackathon.Value = Convert.ToDecimal(unHackathon.NbPlaces);
+            dtp_datedebut_edit_hackathon.Value = unHackathon.DateDebut.ToDateTime(TimeOnly.Parse("10:00 PM"));
+            dtp_datefin_edit_hackathon.Value = unHackathon.DateFin.ToDateTime(TimeOnly.Parse("10:00 PM"));
+            dtp_datelimite_edit_hackathon.Value = unHackathon.DateLimite.ToDateTime(TimeOnly.Parse("10:00 PM"));
+        }
+
+        private void btn_HackathomRem_Click(object sender, EventArgs e)
+        {
+            bddboudero5Context cnx = new bddboudero5Context();
+            Hackathon unHackathon = (Hackathon)cbx_HackathonRem.SelectedItem;
+            var  lesInscriptions = cnx.Inscriptions.Where(ins => ins.IdHackathonNavigation == unHackathon);
+            cnx.Inscriptions.RemoveRange(lesInscriptions);
+            cnx.Hackathons.Remove(unHackathon);
+            cnx.SaveChanges();
+            cbx_choixHackathon.DataSource = cnx.Hackathons.ToList();
+            cbx_choixHackathon.DisplayMember = "Theme";
+            cbx_choixHackathon.ValueMember = "Id";
+            cbx_HackathonRem.DataSource = cnx.Hackathons.ToList();
+            cbx_HackathonRem.DisplayMember = "Theme";
+            cbx_HackathonRem.ValueMember = "Id";
         }
     }
 }
