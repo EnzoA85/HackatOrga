@@ -104,10 +104,15 @@
             btn_HackathomRem = new Button();
             cbx_HackathonRem = new ComboBox();
             lbl_HackathonRem = new Label();
+            imprParticipants = new TabPage();
             btn_retour_accueil = new Button();
             helpProvider1 = new HelpProvider();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            tabPage1 = new TabPage();
+            label17 = new Label();
+            cbx_choixHackathon2 = new ComboBox();
+            lbxParticipants = new ListBox();
+            btnImprParticipants = new Button();
+            label18 = new Label();
             tbc_hackathons.SuspendLayout();
             ajouterHackathon.SuspendLayout();
             gbx_horaire_hackathon.SuspendLayout();
@@ -120,6 +125,7 @@
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)npd_nbplace_edit_hackathon).BeginInit();
             remHackathon.SuspendLayout();
+            imprParticipants.SuspendLayout();
             SuspendLayout();
             // 
             // tbc_hackathons
@@ -127,7 +133,7 @@
             tbc_hackathons.Controls.Add(ajouterHackathon);
             tbc_hackathons.Controls.Add(editHackathon);
             tbc_hackathons.Controls.Add(remHackathon);
-            tbc_hackathons.Controls.Add(tabPage1);
+            tbc_hackathons.Controls.Add(imprParticipants);
             tbc_hackathons.Location = new Point(12, 3);
             tbc_hackathons.Name = "tbc_hackathons";
             tbc_hackathons.SelectedIndex = 0;
@@ -873,6 +879,21 @@
             lbl_HackathonRem.TabIndex = 1;
             lbl_HackathonRem.Text = "Choisir un hackathon à supprimer :";
             // 
+            // imprParticipants
+            // 
+            imprParticipants.Controls.Add(label18);
+            imprParticipants.Controls.Add(btnImprParticipants);
+            imprParticipants.Controls.Add(lbxParticipants);
+            imprParticipants.Controls.Add(cbx_choixHackathon2);
+            imprParticipants.Controls.Add(label17);
+            imprParticipants.Location = new Point(4, 24);
+            imprParticipants.Name = "imprParticipants";
+            imprParticipants.Padding = new Padding(3);
+            imprParticipants.Size = new Size(768, 440);
+            imprParticipants.TabIndex = 3;
+            imprParticipants.Text = "Imprimer les participants";
+            imprParticipants.UseVisualStyleBackColor = true;
+            // 
             // btn_retour_accueil
             // 
             btn_retour_accueil.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
@@ -884,15 +905,52 @@
             btn_retour_accueil.UseVisualStyleBackColor = true;
             btn_retour_accueil.Click += btn_retour_accueil_Click;
             // 
-            // tabPage1
+            // label17
             // 
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(768, 440);
-            tabPage1.TabIndex = 3;
-            tabPage1.Text = "tabPage1";
-            tabPage1.UseVisualStyleBackColor = true;
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label17.Location = new Point(41, 21);
+            label17.Name = "label17";
+            label17.Size = new Size(238, 21);
+            label17.TabIndex = 1;
+            label17.Text = "Choisir un hackathon à imprimer";
+            // 
+            // cbx_choixHackathon2
+            // 
+            cbx_choixHackathon2.FormattingEnabled = true;
+            cbx_choixHackathon2.Location = new Point(285, 23);
+            cbx_choixHackathon2.Name = "cbx_choixHackathon2";
+            cbx_choixHackathon2.Size = new Size(259, 23);
+            cbx_choixHackathon2.TabIndex = 2;
+            // 
+            // lbxParticipants
+            // 
+            lbxParticipants.FormattingEnabled = true;
+            lbxParticipants.ItemHeight = 15;
+            lbxParticipants.Location = new Point(41, 96);
+            lbxParticipants.Name = "lbxParticipants";
+            lbxParticipants.Size = new Size(153, 274);
+            lbxParticipants.TabIndex = 3;
+            // 
+            // btnImprParticipants
+            // 
+            btnImprParticipants.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            btnImprParticipants.Location = new Point(31, 386);
+            btnImprParticipants.Name = "btnImprParticipants";
+            btnImprParticipants.Size = new Size(172, 39);
+            btnImprParticipants.TabIndex = 4;
+            btnImprParticipants.Text = "Imprimer";
+            btnImprParticipants.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.Location = new Point(41, 72);
+            label18.Name = "label18";
+            label18.Size = new Size(97, 21);
+            label18.TabIndex = 5;
+            label18.Text = "Participants :";
             // 
             // hackathons
             // 
@@ -925,6 +983,8 @@
             ((System.ComponentModel.ISupportInitialize)npd_nbplace_edit_hackathon).EndInit();
             remHackathon.ResumeLayout(false);
             remHackathon.PerformLayout();
+            imprParticipants.ResumeLayout(false);
+            imprParticipants.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1005,19 +1065,16 @@
         private Label label14;
         private Label label15;
         private Label label16;
-<<<<<<< HEAD
+
         private TabPage remHackathon;
         private Button btn_HackathomRem;
         private Label lbl_HackathonRem;
         private ComboBox cbx_HackathonRem;
-        private TabPage tabPage1;
-=======
         private TabPage imprParticipants;
+        private Label label18;
+        private Button btnImprParticipants;
+        private ListBox lbxParticipants;
         private ComboBox cbx_choixHackathon2;
         private Label label17;
-        private Button btnImprParticipants;
-        private Label label18;
-        private ListBox lbxParticipants;
->>>>>>> imprimer
     }
 }
