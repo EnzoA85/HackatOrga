@@ -203,7 +203,31 @@ namespace OrgaHackat
             cbx_HackathonRem.ValueMember = "Id";
         }
 
-        private void btnImprParticipants_Click(object sender, EventArgs e)
+        private void cbx_choixHackathon2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            Collection<String> lesParticipants = new Collection<String>();
+
+            bddboudero5Context cnx = new bddboudero5Context();
+            //On récupère le Hackathon choisi dans la liste
+            Hackathon unHackathon = (Hackathon)cbx_choixHackathon2.SelectedItem;
+            // On récupère les inscriptions
+            ICollection<Inscription> LesInscriptions = cnx.Inscriptions.Where(ins => ins.IdHackathon == unHackathon.Id).ToList();
+
+            // on récupère tt les noms + prenom des utilisateurs pour les mettres dans le tableau lesParticipants
+            foreach (Inscription uneInscription in LesInscriptions)
+            {
+
+                Utilisateur unUtilisateur = cnx.Utilisateurs.Find(uneInscription.IdUtilisateur);
+                lesParticipants.Add(unUtilisateur.Nom + ' ' + unUtilisateur.Prenom);
+            };
+
+            // remplir le tableau des participants avec les participants (nom + prenom)
+            lbxParticipants.DataSource = lesParticipants;
+
+
+        }
+
+        private void btnImprParticipants_Click_1(object sender, EventArgs e)
         {
             bddboudero5Context cnx = new bddboudero5Context();
             Hackathon unHackathon = (Hackathon)cbx_choixHackathon2.SelectedItem;

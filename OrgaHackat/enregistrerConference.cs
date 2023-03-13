@@ -5,6 +5,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,8 +28,11 @@ namespace OrgaHackat
             cbxChoixDeHackaton.DisplayMember = "Theme";
             cbxChoixDeHackaton.ValueMember = "Id";
             cbxIntervenant.DataSource = cnx.Intervenants.ToList();
-            cbxIntervenant.DisplayMember= "Nom";
+            cbxIntervenant.DisplayMember = "Nom";
             cbxIntervenant.ValueMember = "Id";
+            cbxListeConferences.DataSource = cnx.Conferences.ToList();
+            cbxListeConferences.DisplayMember = "Theme";
+            cbxListeConferences.ValueMember = "Id";
         }
 
         private void cbxChoixDeHackaton_SelectedIndexChanged(object sender, EventArgs e)
@@ -44,12 +49,12 @@ namespace OrgaHackat
         {
             bddboudero5Context cnx = new bddboudero5Context();
 
-            if(tbxLibelle.Text == "")
+            if (tbxLibelle.Text == "")
             {
                 lblMessage.ForeColor = Color.Red;
                 lblMessage.Text = "libelle de l'evenement est vide !";
             }
-            else if(numDuree.Value == 0)
+            else if (numDuree.Value == 0)
             {
                 lblMessage.ForeColor = Color.Red;
                 lblMessage.Text = "durée d'evenement invalide !";
@@ -97,6 +102,26 @@ namespace OrgaHackat
             accueil page = new accueil();
             page.Show();
             this.Hide();
+        }
+
+        private void cbxListeConferences_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMail_Click(object sender, EventArgs e)
+        {
+            string to = "gregoirz.lebras@gmail.com";
+            string from = "hackathon.sio2@gmail.com";
+
+            bddboudero5Context cnx = new bddboudero5Context();
+            MailMessage message = new MailMessage(from, to);
+            message.Subject = "Hello World";
+            message.Body = "Salut, comment ça va ?";
+            SmtpClient client = new SmtpClient("smtp.gmail.com", 25);
+            client.EnableSsl = true;
+            client.Credentials = new NetworkCredential("hackathon.sio2@gmail.com", "hackathon1");
+            client.Send(message);
         }
     }
 }

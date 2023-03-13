@@ -28,268 +28,345 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbxChoixDeHackaton = new System.Windows.Forms.ComboBox();
-            this.lblChoixHackaton = new System.Windows.Forms.Label();
-            this.lblTitre = new System.Windows.Forms.Label();
-            this.lblLibelle = new System.Windows.Forms.Label();
-            this.tbxLibelle = new System.Windows.Forms.TextBox();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.lblDuree = new System.Windows.Forms.Label();
-            this.lblMin = new System.Windows.Forms.Label();
-            this.dtpTime = new System.Windows.Forms.DateTimePicker();
-            this.lblSalle = new System.Windows.Forms.Label();
-            this.tbxSalle = new System.Windows.Forms.TextBox();
-            this.lblTheme = new System.Windows.Forms.Label();
-            this.tbxTheme = new System.Windows.Forms.TextBox();
-            this.btnEnregistrer = new System.Windows.Forms.Button();
-            this.numDuree = new System.Windows.Forms.NumericUpDown();
-            this.lblMinute = new System.Windows.Forms.Label();
-            this.lblMessage = new System.Windows.Forms.Label();
-            this.btnRetour = new System.Windows.Forms.Button();
-            this.lblIntervenant = new System.Windows.Forms.Label();
-            this.cbxIntervenant = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numDuree)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // cbxChoixDeHackaton
-            // 
-            this.cbxChoixDeHackaton.FormattingEnabled = true;
-            this.cbxChoixDeHackaton.Location = new System.Drawing.Point(143, 74);
-            this.cbxChoixDeHackaton.Name = "cbxChoixDeHackaton";
-            this.cbxChoixDeHackaton.Size = new System.Drawing.Size(290, 23);
-            this.cbxChoixDeHackaton.TabIndex = 0;
-            this.cbxChoixDeHackaton.SelectedIndexChanged += new System.EventHandler(this.cbxChoixDeHackaton_SelectedIndexChanged);
-            // 
-            // lblChoixHackaton
-            // 
-            this.lblChoixHackaton.AutoSize = true;
-            this.lblChoixHackaton.Location = new System.Drawing.Point(12, 77);
-            this.lblChoixHackaton.Name = "lblChoixHackaton";
-            this.lblChoixHackaton.Size = new System.Drawing.Size(125, 30);
-            this.lblChoixHackaton.TabIndex = 1;
-            this.lblChoixHackaton.Text = "Choisissez le hackaton\r\nde cette conférence";
-            // 
-            // lblTitre
-            // 
-            this.lblTitre.AutoSize = true;
-            this.lblTitre.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.lblTitre.Location = new System.Drawing.Point(12, 18);
-            this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(336, 37);
-            this.lblTitre.TabIndex = 2;
-            this.lblTitre.Text = "Enregistrer une Conférence";
-            // 
-            // lblLibelle
-            // 
-            this.lblLibelle.AutoSize = true;
-            this.lblLibelle.Location = new System.Drawing.Point(93, 115);
-            this.lblLibelle.Name = "lblLibelle";
-            this.lblLibelle.Size = new System.Drawing.Size(47, 15);
-            this.lblLibelle.TabIndex = 3;
-            this.lblLibelle.Text = "Libelle :";
-            // 
-            // tbxLibelle
-            // 
-            this.tbxLibelle.Location = new System.Drawing.Point(145, 112);
-            this.tbxLibelle.Name = "tbxLibelle";
-            this.tbxLibelle.Size = new System.Drawing.Size(243, 23);
-            this.tbxLibelle.TabIndex = 4;
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(104, 158);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(36, 15);
-            this.lblDate.TabIndex = 5;
-            this.lblDate.Text = "date :";
-            this.lblDate.Click += new System.EventHandler(this.lblDate_Click);
-            // 
-            // dtpDate
-            // 
-            this.dtpDate.Location = new System.Drawing.Point(145, 150);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(190, 23);
-            this.dtpDate.TabIndex = 6;
-            // 
-            // lblDuree
-            // 
-            this.lblDuree.AutoSize = true;
-            this.lblDuree.Location = new System.Drawing.Point(12, 190);
-            this.lblDuree.Name = "lblDuree";
-            this.lblDuree.Size = new System.Drawing.Size(128, 15);
-            this.lblDuree.TabIndex = 7;
-            this.lblDuree.Text = "Durée de l\'evenement :";
-            // 
-            // lblMin
-            // 
-            this.lblMin.AutoSize = true;
-            this.lblMin.Location = new System.Drawing.Point(220, 196);
-            this.lblMin.Name = "lblMin";
-            this.lblMin.Size = new System.Drawing.Size(0, 15);
-            this.lblMin.TabIndex = 9;
-            // 
-            // dtpTime
-            // 
-            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTime.Location = new System.Drawing.Point(341, 150);
-            this.dtpTime.Name = "dtpTime";
-            this.dtpTime.ShowUpDown = true;
-            this.dtpTime.Size = new System.Drawing.Size(69, 23);
-            this.dtpTime.TabIndex = 10;
-            this.dtpTime.Value = new System.DateTime(2022, 11, 21, 0, 0, 0, 0);
-            // 
-            // lblSalle
-            // 
-            this.lblSalle.AutoSize = true;
-            this.lblSalle.Location = new System.Drawing.Point(102, 222);
-            this.lblSalle.Name = "lblSalle";
-            this.lblSalle.Size = new System.Drawing.Size(37, 15);
-            this.lblSalle.TabIndex = 11;
-            this.lblSalle.Text = "Salle :";
-            // 
-            // tbxSalle
-            // 
-            this.tbxSalle.Location = new System.Drawing.Point(145, 219);
-            this.tbxSalle.Name = "tbxSalle";
-            this.tbxSalle.Size = new System.Drawing.Size(100, 23);
-            this.tbxSalle.TabIndex = 13;
-            // 
-            // lblTheme
-            // 
-            this.lblTheme.AutoSize = true;
-            this.lblTheme.Location = new System.Drawing.Point(90, 255);
-            this.lblTheme.Name = "lblTheme";
-            this.lblTheme.Size = new System.Drawing.Size(49, 15);
-            this.lblTheme.TabIndex = 14;
-            this.lblTheme.Text = "Theme :";
-            // 
-            // tbxTheme
-            // 
-            this.tbxTheme.Location = new System.Drawing.Point(145, 252);
-            this.tbxTheme.Name = "tbxTheme";
-            this.tbxTheme.Size = new System.Drawing.Size(258, 23);
-            this.tbxTheme.TabIndex = 15;
-            // 
-            // btnEnregistrer
-            // 
-            this.btnEnregistrer.Location = new System.Drawing.Point(289, 357);
-            this.btnEnregistrer.Name = "btnEnregistrer";
-            this.btnEnregistrer.Size = new System.Drawing.Size(76, 23);
-            this.btnEnregistrer.TabIndex = 16;
-            this.btnEnregistrer.Text = "Enregistrer";
-            this.btnEnregistrer.UseVisualStyleBackColor = true;
-            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
-            // 
-            // numDuree
-            // 
-            this.numDuree.Location = new System.Drawing.Point(146, 188);
-            this.numDuree.Name = "numDuree";
-            this.numDuree.Size = new System.Drawing.Size(53, 23);
-            this.numDuree.TabIndex = 17;
-            // 
-            // lblMinute
-            // 
-            this.lblMinute.AutoSize = true;
-            this.lblMinute.Location = new System.Drawing.Point(205, 190);
-            this.lblMinute.Name = "lblMinute";
-            this.lblMinute.Size = new System.Drawing.Size(28, 15);
-            this.lblMinute.TabIndex = 18;
-            this.lblMinute.Text = "min";
+            lblMessage = new Label();
+            tabConferences = new TabControl();
+            tabEnregistrerConference = new TabPage();
+            cbxIntervenant = new ComboBox();
+            lblIntervenant = new Label();
+            btnRetour = new Button();
+            lblMinute = new Label();
+            numDuree = new NumericUpDown();
+            btnEnregistrer = new Button();
+            tbxTheme = new TextBox();
+            lblTheme = new Label();
+            tbxSalle = new TextBox();
+            lblSalle = new Label();
+            dtpTime = new DateTimePicker();
+            lblMin = new Label();
+            lblDuree = new Label();
+            dtpDate = new DateTimePicker();
+            lblDate = new Label();
+            tbxLibelle = new TextBox();
+            lblLibelle = new Label();
+            lblTitre = new Label();
+            lblChoixHackaton = new Label();
+            cbxChoixDeHackaton = new ComboBox();
+            tabRappelConference = new TabPage();
+            btnMail = new Button();
+            cbxListeConferences = new ComboBox();
+            labelRappelConf = new Label();
+            tabConferences.SuspendLayout();
+            tabEnregistrerConference.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numDuree).BeginInit();
+            tabRappelConference.SuspendLayout();
+            SuspendLayout();
             // 
             // lblMessage
             // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(12, 305);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 15);
-            this.lblMessage.TabIndex = 19;
+            lblMessage.AutoSize = true;
+            lblMessage.Location = new Point(12, 305);
+            lblMessage.Name = "lblMessage";
+            lblMessage.Size = new Size(0, 15);
+            lblMessage.TabIndex = 19;
             // 
-            // btnRetour
+            // tabConferences
             // 
-            this.btnRetour.Location = new System.Drawing.Point(371, 357);
-            this.btnRetour.Name = "btnRetour";
-            this.btnRetour.Size = new System.Drawing.Size(75, 23);
-            this.btnRetour.TabIndex = 20;
-            this.btnRetour.Text = "Retour";
-            this.btnRetour.UseVisualStyleBackColor = true;
-            this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
+            tabConferences.Controls.Add(tabEnregistrerConference);
+            tabConferences.Controls.Add(tabRappelConference);
+            tabConferences.Location = new Point(12, 12);
+            tabConferences.Name = "tabConferences";
+            tabConferences.SelectedIndex = 0;
+            tabConferences.Size = new Size(465, 408);
+            tabConferences.TabIndex = 23;
             // 
-            // lblIntervenant
+            // tabEnregistrerConference
             // 
-            this.lblIntervenant.AutoSize = true;
-            this.lblIntervenant.Location = new System.Drawing.Point(67, 292);
-            this.lblIntervenant.Name = "lblIntervenant";
-            this.lblIntervenant.Size = new System.Drawing.Size(73, 15);
-            this.lblIntervenant.TabIndex = 21;
-            this.lblIntervenant.Text = "Intervenant :";
+            tabEnregistrerConference.Controls.Add(cbxIntervenant);
+            tabEnregistrerConference.Controls.Add(lblIntervenant);
+            tabEnregistrerConference.Controls.Add(btnRetour);
+            tabEnregistrerConference.Controls.Add(lblMinute);
+            tabEnregistrerConference.Controls.Add(numDuree);
+            tabEnregistrerConference.Controls.Add(btnEnregistrer);
+            tabEnregistrerConference.Controls.Add(tbxTheme);
+            tabEnregistrerConference.Controls.Add(lblTheme);
+            tabEnregistrerConference.Controls.Add(tbxSalle);
+            tabEnregistrerConference.Controls.Add(lblSalle);
+            tabEnregistrerConference.Controls.Add(dtpTime);
+            tabEnregistrerConference.Controls.Add(lblMin);
+            tabEnregistrerConference.Controls.Add(lblDuree);
+            tabEnregistrerConference.Controls.Add(dtpDate);
+            tabEnregistrerConference.Controls.Add(lblDate);
+            tabEnregistrerConference.Controls.Add(tbxLibelle);
+            tabEnregistrerConference.Controls.Add(lblLibelle);
+            tabEnregistrerConference.Controls.Add(lblTitre);
+            tabEnregistrerConference.Controls.Add(lblChoixHackaton);
+            tabEnregistrerConference.Controls.Add(cbxChoixDeHackaton);
+            tabEnregistrerConference.Location = new Point(4, 24);
+            tabEnregistrerConference.Name = "tabEnregistrerConference";
+            tabEnregistrerConference.Padding = new Padding(3);
+            tabEnregistrerConference.Size = new Size(457, 380);
+            tabEnregistrerConference.TabIndex = 0;
+            tabEnregistrerConference.Text = "Enregistrer";
+            tabEnregistrerConference.UseVisualStyleBackColor = true;
             // 
             // cbxIntervenant
             // 
-            this.cbxIntervenant.FormattingEnabled = true;
-            this.cbxIntervenant.Location = new System.Drawing.Point(146, 289);
-            this.cbxIntervenant.Name = "cbxIntervenant";
-            this.cbxIntervenant.Size = new System.Drawing.Size(287, 23);
-            this.cbxIntervenant.TabIndex = 22;
+            cbxIntervenant.FormattingEnabled = true;
+            cbxIntervenant.Location = new Point(145, 283);
+            cbxIntervenant.Name = "cbxIntervenant";
+            cbxIntervenant.Size = new Size(287, 23);
+            cbxIntervenant.TabIndex = 42;
+            // 
+            // lblIntervenant
+            // 
+            lblIntervenant.AutoSize = true;
+            lblIntervenant.Location = new Point(66, 286);
+            lblIntervenant.Name = "lblIntervenant";
+            lblIntervenant.Size = new Size(73, 15);
+            lblIntervenant.TabIndex = 41;
+            lblIntervenant.Text = "Intervenant :";
+            // 
+            // btnRetour
+            // 
+            btnRetour.Location = new Point(370, 351);
+            btnRetour.Name = "btnRetour";
+            btnRetour.Size = new Size(75, 23);
+            btnRetour.TabIndex = 40;
+            btnRetour.Text = "Retour";
+            btnRetour.UseVisualStyleBackColor = true;
+            // 
+            // lblMinute
+            // 
+            lblMinute.AutoSize = true;
+            lblMinute.Location = new Point(204, 184);
+            lblMinute.Name = "lblMinute";
+            lblMinute.Size = new Size(28, 15);
+            lblMinute.TabIndex = 39;
+            lblMinute.Text = "min";
+            // 
+            // numDuree
+            // 
+            numDuree.Location = new Point(145, 182);
+            numDuree.Name = "numDuree";
+            numDuree.Size = new Size(53, 23);
+            numDuree.TabIndex = 38;
+            // 
+            // btnEnregistrer
+            // 
+            btnEnregistrer.Location = new Point(288, 351);
+            btnEnregistrer.Name = "btnEnregistrer";
+            btnEnregistrer.Size = new Size(76, 23);
+            btnEnregistrer.TabIndex = 37;
+            btnEnregistrer.Text = "Enregistrer";
+            btnEnregistrer.UseVisualStyleBackColor = true;
+            // 
+            // tbxTheme
+            // 
+            tbxTheme.Location = new Point(144, 246);
+            tbxTheme.Name = "tbxTheme";
+            tbxTheme.Size = new Size(258, 23);
+            tbxTheme.TabIndex = 36;
+            // 
+            // lblTheme
+            // 
+            lblTheme.AutoSize = true;
+            lblTheme.Location = new Point(89, 249);
+            lblTheme.Name = "lblTheme";
+            lblTheme.Size = new Size(49, 15);
+            lblTheme.TabIndex = 35;
+            lblTheme.Text = "Theme :";
+            // 
+            // tbxSalle
+            // 
+            tbxSalle.Location = new Point(144, 213);
+            tbxSalle.Name = "tbxSalle";
+            tbxSalle.Size = new Size(100, 23);
+            tbxSalle.TabIndex = 34;
+            // 
+            // lblSalle
+            // 
+            lblSalle.AutoSize = true;
+            lblSalle.Location = new Point(101, 216);
+            lblSalle.Name = "lblSalle";
+            lblSalle.Size = new Size(37, 15);
+            lblSalle.TabIndex = 33;
+            lblSalle.Text = "Salle :";
+            // 
+            // dtpTime
+            // 
+            dtpTime.Format = DateTimePickerFormat.Time;
+            dtpTime.Location = new Point(340, 144);
+            dtpTime.Name = "dtpTime";
+            dtpTime.ShowUpDown = true;
+            dtpTime.Size = new Size(69, 23);
+            dtpTime.TabIndex = 32;
+            dtpTime.Value = new DateTime(2022, 11, 21, 0, 0, 0, 0);
+            // 
+            // lblMin
+            // 
+            lblMin.AutoSize = true;
+            lblMin.Location = new Point(219, 190);
+            lblMin.Name = "lblMin";
+            lblMin.Size = new Size(0, 15);
+            lblMin.TabIndex = 31;
+            // 
+            // lblDuree
+            // 
+            lblDuree.AutoSize = true;
+            lblDuree.Location = new Point(11, 184);
+            lblDuree.Name = "lblDuree";
+            lblDuree.Size = new Size(128, 15);
+            lblDuree.TabIndex = 30;
+            lblDuree.Text = "Durée de l'evenement :";
+            // 
+            // dtpDate
+            // 
+            dtpDate.Location = new Point(144, 144);
+            dtpDate.Name = "dtpDate";
+            dtpDate.Size = new Size(190, 23);
+            dtpDate.TabIndex = 29;
+            // 
+            // lblDate
+            // 
+            lblDate.AutoSize = true;
+            lblDate.Location = new Point(103, 152);
+            lblDate.Name = "lblDate";
+            lblDate.Size = new Size(36, 15);
+            lblDate.TabIndex = 28;
+            lblDate.Text = "date :";
+            // 
+            // tbxLibelle
+            // 
+            tbxLibelle.Location = new Point(144, 106);
+            tbxLibelle.Name = "tbxLibelle";
+            tbxLibelle.Size = new Size(243, 23);
+            tbxLibelle.TabIndex = 27;
+            // 
+            // lblLibelle
+            // 
+            lblLibelle.AutoSize = true;
+            lblLibelle.Location = new Point(92, 109);
+            lblLibelle.Name = "lblLibelle";
+            lblLibelle.Size = new Size(47, 15);
+            lblLibelle.TabIndex = 26;
+            lblLibelle.Text = "Libelle :";
+            // 
+            // lblTitre
+            // 
+            lblTitre.AutoSize = true;
+            lblTitre.Font = new Font("Segoe UI", 20F, FontStyle.Underline, GraphicsUnit.Point);
+            lblTitre.Location = new Point(11, 12);
+            lblTitre.Name = "lblTitre";
+            lblTitre.Size = new Size(336, 37);
+            lblTitre.TabIndex = 25;
+            lblTitre.Text = "Enregistrer une Conférence";
+            // 
+            // lblChoixHackaton
+            // 
+            lblChoixHackaton.AutoSize = true;
+            lblChoixHackaton.Location = new Point(11, 71);
+            lblChoixHackaton.Name = "lblChoixHackaton";
+            lblChoixHackaton.Size = new Size(125, 30);
+            lblChoixHackaton.TabIndex = 24;
+            lblChoixHackaton.Text = "Choisissez le hackaton\r\nde cette conférence";
+            // 
+            // cbxChoixDeHackaton
+            // 
+            cbxChoixDeHackaton.FormattingEnabled = true;
+            cbxChoixDeHackaton.Location = new Point(142, 68);
+            cbxChoixDeHackaton.Name = "cbxChoixDeHackaton";
+            cbxChoixDeHackaton.Size = new Size(290, 23);
+            cbxChoixDeHackaton.TabIndex = 23;
+            // 
+            // tabRappelConference
+            // 
+            tabRappelConference.Controls.Add(btnMail);
+            tabRappelConference.Controls.Add(cbxListeConferences);
+            tabRappelConference.Controls.Add(labelRappelConf);
+            tabRappelConference.Location = new Point(4, 24);
+            tabRappelConference.Name = "tabRappelConference";
+            tabRappelConference.Padding = new Padding(3);
+            tabRappelConference.Size = new Size(457, 380);
+            tabRappelConference.TabIndex = 1;
+            tabRappelConference.Text = "Rappels";
+            tabRappelConference.UseVisualStyleBackColor = true;
+            // 
+            // btnMail
+            // 
+            btnMail.Location = new Point(27, 330);
+            btnMail.Name = "btnMail";
+            btnMail.Size = new Size(184, 34);
+            btnMail.TabIndex = 28;
+            btnMail.Text = "Envoyer un mail de rapport";
+            btnMail.UseVisualStyleBackColor = true;
+            btnMail.Click += btnMail_Click;
+            // 
+            // cbxListeConferences
+            // 
+            cbxListeConferences.FormattingEnabled = true;
+            cbxListeConferences.Location = new Point(164, 15);
+            cbxListeConferences.Name = "cbxListeConferences";
+            cbxListeConferences.Size = new Size(277, 23);
+            cbxListeConferences.TabIndex = 27;
+            cbxListeConferences.SelectedIndexChanged += cbxListeConferences_SelectedIndexChanged;
+            // 
+            // labelRappelConf
+            // 
+            labelRappelConf.AutoSize = true;
+            labelRappelConf.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            labelRappelConf.Location = new Point(6, 18);
+            labelRappelConf.Name = "labelRappelConf";
+            labelRappelConf.Size = new Size(152, 15);
+            labelRappelConf.TabIndex = 26;
+            labelRappelConf.Text = "Choisissez une conférence :";
             // 
             // enregistrerConference
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 392);
-            this.Controls.Add(this.cbxIntervenant);
-            this.Controls.Add(this.lblIntervenant);
-            this.Controls.Add(this.btnRetour);
-            this.Controls.Add(this.lblMessage);
-            this.Controls.Add(this.lblMinute);
-            this.Controls.Add(this.numDuree);
-            this.Controls.Add(this.btnEnregistrer);
-            this.Controls.Add(this.tbxTheme);
-            this.Controls.Add(this.lblTheme);
-            this.Controls.Add(this.tbxSalle);
-            this.Controls.Add(this.lblSalle);
-            this.Controls.Add(this.dtpTime);
-            this.Controls.Add(this.lblMin);
-            this.Controls.Add(this.lblDuree);
-            this.Controls.Add(this.dtpDate);
-            this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.tbxLibelle);
-            this.Controls.Add(this.lblLibelle);
-            this.Controls.Add(this.lblTitre);
-            this.Controls.Add(this.lblChoixHackaton);
-            this.Controls.Add(this.cbxChoixDeHackaton);
-            this.Name = "enregistrerConference";
-            this.Text = "enregistrer";
-            this.Load += new System.EventHandler(this.enregistrerConference_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numDuree)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(484, 426);
+            Controls.Add(tabConferences);
+            Controls.Add(lblMessage);
+            Name = "enregistrerConference";
+            Text = "enregistrer";
+            Load += enregistrerConference_Load;
+            tabConferences.ResumeLayout(false);
+            tabEnregistrerConference.ResumeLayout(false);
+            tabEnregistrerConference.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numDuree).EndInit();
+            tabRappelConference.ResumeLayout(false);
+            tabRappelConference.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private ComboBox cbxChoixDeHackaton;
-        private Label lblChoixHackaton;
-        private Label lblTitre;
-        private Label lblLibelle;
-        private TextBox tbxLibelle;
-        private Label lblDate;
-        private DateTimePicker dtpDate;
-        private Label lblDuree;
-        private Label lblMin;
-        private DateTimePicker dtpTime;
-        private Label lblSalle;
-        private TextBox tbxSalle;
-        private Label lblTheme;
-        private TextBox tbxTheme;
-        private Button btnEnregistrer;
-        private NumericUpDown numDuree;
-        private Label lblMinute;
         private Label lblMessage;
-        private Button btnRetour;
-        private Label lblIntervenant;
+        private TabControl tabConferences;
+        private TabPage tabEnregistrerConference;
         private ComboBox cbxIntervenant;
+        private Label lblIntervenant;
+        private Button btnRetour;
+        private Label lblMinute;
+        private NumericUpDown numDuree;
+        private Button btnEnregistrer;
+        private TextBox tbxTheme;
+        private Label lblTheme;
+        private TextBox tbxSalle;
+        private Label lblSalle;
+        private DateTimePicker dtpTime;
+        private Label lblMin;
+        private Label lblDuree;
+        private DateTimePicker dtpDate;
+        private Label lblDate;
+        private TextBox tbxLibelle;
+        private Label lblLibelle;
+        private Label lblTitre;
+        private Label lblChoixHackaton;
+        private ComboBox cbxChoixDeHackaton;
+        private TabPage tabRappelConference;
+        private ComboBox cbxListeConferences;
+        private Label labelRappelConf;
+        private Button btnMail;
     }
 }
