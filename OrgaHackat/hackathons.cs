@@ -232,8 +232,11 @@ namespace OrgaHackat
             bddboudero5Context cnx = new bddboudero5Context();
             Hackathon unHackathon = (Hackathon)cbx_choixHackathon2.SelectedItem;
             Document unDocument = new Document();
-            PdfWriter.GetInstance(unDocument, new FileStream("..\\..\\..\\..\\..\\Liste_Inscriptions.pdf", FileMode.Create));
+            PdfWriter writer2 = null;
+            writer2 = PdfWriter.GetInstance(unDocument, new FileStream("..\\..\\..\\..\\..\\Liste_Inscriptions.pdf", FileMode.Create));
             unDocument.Open();
+            writer2.SetFullCompression();
+            writer2.CloseStream = true;
 
             iTextSharp.text.Font myFont = FontFactory.GetFont("Arial", 20, iTextSharp.text.Font.BOLD);
             Paragraph titre = new Paragraph("Liste des inscrits pour " + unHackathon.Theme, myFont);
@@ -259,6 +262,11 @@ namespace OrgaHackat
             unDocument.Add(tableau);
             //Enregistrement du fichier
             unDocument.Close();
+            unDocument = null;
+            writer2.Close();
+            hackathons Form1 = new hackathons();
+            Form1.Show();
+            this.Close();
         }
     }
 }
