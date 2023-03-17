@@ -31,8 +31,6 @@ namespace OrgaHackat
             bddboudero5Context cnx = new bddboudero5Context();
             List<Hackathon> listHackathon = cnx.Hackathons.ToList();
 
-
-
             dgv_nbParticipantHackathon.ColumnCount = 3;
             dgv_nbParticipantHackathon.Columns[0].Name = "ID Hackathon";
             dgv_nbParticipantHackathon.Columns[1].Name = "Hackathon";
@@ -41,6 +39,17 @@ namespace OrgaHackat
             {
                 ICollection<Inscription> listInscription = cnx.Inscriptions.Where(ins => ins.IdHackathon == listHackathon[i].Id).ToList();
                 dgv_nbParticipantHackathon.Rows.Add(listHackathon[i].Id, listHackathon[i].Theme, listInscription.Count());
+            }
+
+            List<Initiation> listInitiation = cnx.Initiations.ToList();
+            dgv_nbParticipantAtelier.ColumnCount = 3;
+            dgv_nbParticipantAtelier.Columns[0].Name = "ID Initiation";
+            dgv_nbParticipantAtelier.Columns[1].Name = "Initiation";
+            dgv_nbParticipantAtelier.Columns[2].Name = "Nombre Participant";
+            for (int i = 0; i < listInitiation.Count; i++)
+            {
+                ICollection<Participant> listParticipant = cnx.Participants.Where(ins => ins.InitiationId == listInitiation[i].Id).ToList();
+                dgv_nbParticipantAtelier.Rows.Add(listInitiation[i].Id, listInitiation[i].IdNavigation.Libelle ,listParticipant.Count());
             }
         }
     }
