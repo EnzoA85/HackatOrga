@@ -63,17 +63,18 @@
             // dgv_nbParticipantHackathon
             // 
             dgv_nbParticipantHackathon.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_nbParticipantHackathon.Location = new Point(6, 52);
+            dgv_nbParticipantHackathon.Location = new Point(21, 42);
             dgv_nbParticipantHackathon.Name = "dgv_nbParticipantHackathon";
+            dgv_nbParticipantHackathon.ReadOnly = true;
             dgv_nbParticipantHackathon.RowTemplate.Height = 25;
-            dgv_nbParticipantHackathon.Size = new Size(389, 319);
+            dgv_nbParticipantHackathon.Size = new Size(342, 314);
             dgv_nbParticipantHackathon.TabIndex = 1;
             // 
             // lbl_stat_nbParticipantHackathon
             // 
             lbl_stat_nbParticipantHackathon.AutoSize = true;
             lbl_stat_nbParticipantHackathon.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_stat_nbParticipantHackathon.Location = new Point(6, 19);
+            lbl_stat_nbParticipantHackathon.Location = new Point(0, 9);
             lbl_stat_nbParticipantHackathon.Name = "lbl_stat_nbParticipantHackathon";
             lbl_stat_nbParticipantHackathon.Size = new Size(389, 30);
             lbl_stat_nbParticipantHackathon.TabIndex = 0;

@@ -31,15 +31,16 @@ namespace OrgaHackat
             bddboudero5Context cnx = new bddboudero5Context();
             List<Hackathon> listHackathon = cnx.Hackathons.ToList();
 
-            
 
-            dgv_nbParticipantHackathon.ColumnCount = 2;
-            dgv_nbParticipantHackathon.Columns[0].Name = "Hackathon";
-            dgv_nbParticipantHackathon.Columns[1].Name = "Nombre Participant";
+
+            dgv_nbParticipantHackathon.ColumnCount = 3;
+            dgv_nbParticipantHackathon.Columns[0].Name = "ID Hackathon";
+            dgv_nbParticipantHackathon.Columns[1].Name = "Hackathon";
+            dgv_nbParticipantHackathon.Columns[2].Name = "Nombre Participant";
             for (int i = 0; i < listHackathon.Count; i++)
             {
                 ICollection<Inscription> listInscription = cnx.Inscriptions.Where(ins => ins.IdHackathon == listHackathon[i].Id).ToList();
-                dgv_nbParticipantHackathon.Rows.Add(listHackathon[i].Theme, listInscription.Count());
+                dgv_nbParticipantHackathon.Rows.Add(listHackathon[i].Id, listHackathon[i].Theme, listInscription.Count());
             }
         }
     }
