@@ -207,7 +207,7 @@ namespace OrgaHackat
             cbx_HackathonRem.ValueMember = "Id";
         }
 
-<<<<<<< HEAD
+        /*
         private void cbx_choixHackathon2_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Collection<String> lesParticipants = new Collection<String>();
@@ -230,10 +230,9 @@ namespace OrgaHackat
             lbxParticipants.DataSource = lesParticipants;
 
 
-        }
+        }*/
 
-=======
->>>>>>> 077618e3db14310dba686735d103da9c296c263a
+
         private void btnImprParticipants_Click_1(object sender, EventArgs e)
         {
             bddboudero5Context cnx = new bddboudero5Context();

@@ -172,7 +172,7 @@ namespace OrgaHackat
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
                 client.Send(message);
             }*/
-            MessageBox.Show("réussi");
+            //MessageBox.Show("réussi");
         }
     }
 }
