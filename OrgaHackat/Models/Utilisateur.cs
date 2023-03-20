@@ -8,6 +8,7 @@ namespace OrgaHackat.Models
         public Utilisateur()
         {
             Inscriptions = new HashSet<Inscription>();
+            Hackathons = new HashSet<Hackathon>();
         }
 
         public int Id { get; set; }
@@ -24,5 +25,7 @@ namespace OrgaHackat.Models
         public string? Roles { get; set; }
 
         public virtual ICollection<Inscription> Inscriptions { get; set; }
+
+        public virtual ICollection<Hackathon> Hackathons { get; set; }
     }
 }

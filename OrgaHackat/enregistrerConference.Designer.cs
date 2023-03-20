@@ -53,8 +53,8 @@
             cbxChoixDeHackaton = new ComboBox();
             tabRappelConference = new TabPage();
             btnMail = new Button();
-            cbxListeConferences = new ComboBox();
             labelRappelConf = new Label();
+            clbConferences = new CheckedListBox();
             tabConferences.SuspendLayout();
             tabEnregistrerConference.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numDuree).BeginInit();
@@ -280,8 +280,8 @@
             // 
             // tabRappelConference
             // 
+            tabRappelConference.Controls.Add(clbConferences);
             tabRappelConference.Controls.Add(btnMail);
-            tabRappelConference.Controls.Add(cbxListeConferences);
             tabRappelConference.Controls.Add(labelRappelConf);
             tabRappelConference.Location = new Point(4, 24);
             tabRappelConference.Name = "tabRappelConference";
@@ -301,15 +301,6 @@
             btnMail.UseVisualStyleBackColor = true;
             btnMail.Click += btnMail_Click;
             // 
-            // cbxListeConferences
-            // 
-            cbxListeConferences.FormattingEnabled = true;
-            cbxListeConferences.Location = new Point(164, 15);
-            cbxListeConferences.Name = "cbxListeConferences";
-            cbxListeConferences.Size = new Size(277, 23);
-            cbxListeConferences.TabIndex = 27;
-            cbxListeConferences.SelectedIndexChanged += cbxListeConferences_SelectedIndexChanged;
-            // 
             // labelRappelConf
             // 
             labelRappelConf.AutoSize = true;
@@ -319,6 +310,14 @@
             labelRappelConf.Size = new Size(152, 15);
             labelRappelConf.TabIndex = 26;
             labelRappelConf.Text = "Choisissez une conférence :";
+            // 
+            // clbConferences
+            // 
+            clbConferences.FormattingEnabled = true;
+            clbConferences.Location = new Point(6, 46);
+            clbConferences.Name = "clbConferences";
+            clbConferences.Size = new Size(120, 94);
+            clbConferences.TabIndex = 29;
             // 
             // enregistrerConference
             // 
@@ -365,8 +364,8 @@
         private Label lblChoixHackaton;
         private ComboBox cbxChoixDeHackaton;
         private TabPage tabRappelConference;
-        private ComboBox cbxListeConferences;
         private Label labelRappelConf;
         private Button btnMail;
+        private CheckedListBox clbConferences;
     }
 }
