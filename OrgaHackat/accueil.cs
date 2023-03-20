@@ -38,9 +38,11 @@ namespace OrgaHackat
             this.Hide();
         }
 
-        private void btnImprimer_Click(object sender, EventArgs e)
+        private void btn_statistique_Click(object sender, EventArgs e)
         {
-
+            statistique Form2 = new statistique();
+            Form2.Show();
+            this.Hide();
         }
     }
 }
