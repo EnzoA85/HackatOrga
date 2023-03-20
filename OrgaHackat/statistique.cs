@@ -29,12 +29,13 @@ namespace OrgaHackat
         private void statistique_Load(object sender, EventArgs e)
         {
             bddboudero5Context cnx = new bddboudero5Context();
+
             List<Hackathon> listHackathon = cnx.Hackathons.ToList();
 
             dgv_nbParticipantHackathon.ColumnCount = 3;
             dgv_nbParticipantHackathon.Columns[0].Name = "ID Hackathon";
             dgv_nbParticipantHackathon.Columns[1].Name = "Hackathon";
-            dgv_nbParticipantHackathon.Columns[2].Name = "Nombre Participant";
+            dgv_nbParticipantHackathon.Columns[2].Name = "Nombre d'Inscrit";
             for (int i = 0; i < listHackathon.Count; i++)
             {
                 ICollection<Inscription> listInscription = cnx.Inscriptions.Where(ins => ins.IdHackathon == listHackathon[i].Id).ToList();
@@ -48,8 +49,9 @@ namespace OrgaHackat
             dgv_nbParticipantAtelier.Columns[2].Name = "Nombre Participant";
             for (int i = 0; i < listInitiation.Count; i++)
             {
-                ICollection<Participant> listParticipant = cnx.Participants.Where(ins => ins.InitiationId == listInitiation[i].Id).ToList();
-                dgv_nbParticipantAtelier.Rows.Add(listInitiation[i].Id, listInitiation[i].IdNavigation.Libelle ,listParticipant.Count());
+                ICollection<Participant> listParticipant = cnx.Participants.Where(part => part.InitiationId == listInitiation[i].Id).ToList();
+                List<Evenement> nomInitiation = cnx.Evenements.Where(even => even.Id == listInitiation[i].Id).ToList();
+                dgv_nbParticipantAtelier.Rows.Add(listInitiation[i].Id, nomInitiation[0].Libelle, listParticipant.Count());
             }
         }
     }
