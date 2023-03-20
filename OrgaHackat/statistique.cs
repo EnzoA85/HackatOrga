@@ -2,6 +2,7 @@
 using OrgaHackat.Models;
 using System;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -31,7 +32,7 @@ namespace OrgaHackat
         {
             bddboudero5Context cnx = new bddboudero5Context();
 
-            List<Hackathon> listHackathon = cnx.Hackathons.ToList();
+            List<Hackathon> listHackathon = cnx.Hackathons.Include(i => i.Inscriptions).ToList();
 
             dgv_nbParticipantHackathon.ColumnCount = 3;
             dgv_nbParticipantHackathon.Columns[0].Name = "ID Hackathon";
@@ -39,13 +40,13 @@ namespace OrgaHackat
             dgv_nbParticipantHackathon.Columns[2].Name = "Nombre d'Inscrit";
             for (int i = 0; i < listHackathon.Count; i++)
             {
-                ICollection<Inscription> listInscription = cnx.Inscriptions.Where(ins => ins.IdHackathon == listHackathon[i].Id).ToList();
-                dgv_nbParticipantHackathon.Rows.Add(listHackathon[i].Id, listHackathon[i].Theme, listInscription.Count());
-                if (listInscription.Count() >= listHackathon[i].NbPlaces / 2)
+                int nbInsc = listHackathon[i].Inscriptions.Count();
+                dgv_nbParticipantHackathon.Rows.Add(listHackathon[i].Id, listHackathon[i].Theme, nbInsc);
+                if (nbInsc >= listHackathon[i].NbPlaces / 2)
                 {
                     dgv_nbParticipantHackathon.Rows[i].Cells[2].Style.BackColor = Color.Yellow;
                 }
-                if (listInscription.Count() == listHackathon[i].NbPlaces)
+                if (nbInsc == listHackathon[i].NbPlaces)
                 {
                     dgv_nbParticipantHackathon.Rows[i].Cells[2].Style.BackColor = Color.Red;
                 }
