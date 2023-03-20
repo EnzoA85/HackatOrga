@@ -33,8 +33,8 @@ namespace OrgaHackat
             cbxIntervenant.DataSource = cnx.Intervenants.ToList();
             cbxIntervenant.DisplayMember = "Nom";
             cbxIntervenant.ValueMember = "Id";
-            clbConferences.DataSource = cnx.Conferences.ToList();
-            //clbConferences.DataSource = cnx.Conferences.Where(conf => conf.IdNavigation.Date <= DateOnly.FromDateTime(DateTime.Now.AddDays(7).Date)).ToList();
+            //clbConferences.DataSource = cnx.Conferences.ToList();
+            clbConferences.DataSource = cnx.Conferences.Where(conf => conf.IdNavigation.Date <= DateOnly.FromDateTime(DateTime.Now.AddDays(7).Date)).ToList();
             clbConferences.DisplayMember = "Theme";
             clbConferences.ValueMember = "Id";
         }
