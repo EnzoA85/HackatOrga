@@ -31,8 +31,8 @@ namespace OrgaHackat.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-// #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseMySql("server=192.168.4.1;port=3306;user=sqldboudero;password=savary;database=bddboudero5;sslmode=none", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.5.15-mariadb"));
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseMySql("server=192.168.4.1;port=3306;user=sqldboudero;password=savary;database=bddboudero5;sslmode=none", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.5.18-mariadb"));
             }
         }
 
@@ -154,7 +154,8 @@ namespace OrgaHackat.Models
 
                 entity.Property(e => e.CodePostal)
                     .HasMaxLength(5)
-                    .HasColumnName("codePostal");
+                    .HasColumnName("codePostal")
+                    .IsFixedLength();
 
                 entity.Property(e => e.DateDebut).HasColumnName("dateDebut");
 
@@ -270,6 +271,10 @@ namespace OrgaHackat.Models
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
                     .HasColumnName("id");
+
+                entity.Property(e => e.Mail)
+                    .HasMaxLength(128)
+                    .HasColumnName("mail");
 
                 entity.Property(e => e.Nom)
                     .HasMaxLength(255)
@@ -393,6 +398,27 @@ namespace OrgaHackat.Models
                 entity.Property(e => e.Tel)
                     .HasMaxLength(10)
                     .HasColumnName("tel");
+
+                entity.HasMany(d => d.Hackathons)
+                    .WithMany(p => p.Utilisateurs)
+                    .UsingEntity<Dictionary<string, object>>(
+                        "UtilisateurHackathon",
+                        l => l.HasOne<Hackathon>().WithMany().HasForeignKey("HackathonId").HasConstraintName("FK_EB940363996D90CF"),
+                        r => r.HasOne<Utilisateur>().WithMany().HasForeignKey("UtilisateurId").HasConstraintName("FK_EB940363FB88E14F"),
+                        j =>
+                        {
+                            j.HasKey("UtilisateurId", "HackathonId").HasName("PRIMARY").HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
+
+                            j.ToTable("utilisateur_hackathon").UseCollation("utf8mb4_unicode_ci");
+
+                            j.HasIndex(new[] { "HackathonId" }, "IDX_EB940363996D90CF");
+
+                            j.HasIndex(new[] { "UtilisateurId" }, "IDX_EB940363FB88E14F");
+
+                            j.IndexerProperty<int>("UtilisateurId").HasColumnType("int(11)").HasColumnName("utilisateur_id");
+
+                            j.IndexerProperty<int>("HackathonId").HasColumnType("int(11)").HasColumnName("hackathon_id");
+                        });
             });
 
             OnModelCreatingPartial(modelBuilder);

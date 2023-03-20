@@ -1,4 +1,7 @@
-﻿using OrgaHackat.Models;
+﻿using MailKit.Security;
+using MimeKit.Text;
+using MimeKit;
+using OrgaHackat.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,9 +33,10 @@ namespace OrgaHackat
             cbxIntervenant.DataSource = cnx.Intervenants.ToList();
             cbxIntervenant.DisplayMember = "Nom";
             cbxIntervenant.ValueMember = "Id";
-            cbxListeConferences.DataSource = cnx.Conferences.ToList();
-            cbxListeConferences.DisplayMember = "Theme";
-            cbxListeConferences.ValueMember = "Id";
+            clbConferences.DataSource = cnx.Conferences.ToList();
+            //clbConferences.DataSource = cnx.Conferences.Where(conf => conf.IdNavigation.Date <= DateOnly.FromDateTime(DateTime.Now.AddDays(7).Date)).ToList();
+            clbConferences.DisplayMember = "Theme";
+            clbConferences.ValueMember = "Id";
         }
 
         private void cbxChoixDeHackaton_SelectedIndexChanged(object sender, EventArgs e)
@@ -111,17 +115,61 @@ namespace OrgaHackat
 
         private void btnMail_Click(object sender, EventArgs e)
         {
-            string to = "gregoirz.lebras@gmail.com";
-            string from = "hackathon.sio2@gmail.com";
-
             bddboudero5Context cnx = new bddboudero5Context();
-            MailMessage message = new MailMessage(from, to);
-            message.Subject = "Hello World";
-            message.Body = "Salut, comment ça va ?";
-            SmtpClient client = new SmtpClient("smtp.gmail.com", 25);
-            client.EnableSsl = true;
-            client.Credentials = new NetworkCredential("hackathon.sio2@gmail.com", "hackathon1");
-            client.Send(message);
+
+
+            foreach (Conference conf in clbConferences.CheckedItems)
+            {
+                var email = new MimeMessage();
+                email.From.Add(MailboxAddress.Parse("hackathon.sio2@gmail.com"));
+                email.To.Add(MailboxAddress.Parse(conf.Intervenant.Mail));
+                email.Subject = "Test Email Subject";
+                email.Body = new TextPart(TextFormat.Plain) {
+                    Text = "Rappel pour votre conference\n\n" +
+                    "Adresse : " + conf.IdNavigation.Hackathon.Rue + ", " + conf.IdNavigation.Hackathon.Ville + " " + conf.IdNavigation.Hackathon.CodePostal + " " +
+                    conf.IdNavigation.Hackathon.Lieu + "\n" +
+                    "Salle : " + conf.IdNavigation.Salle + "\n" +
+                    "à " + conf.IdNavigation.Date + ":" + conf.IdNavigation.Heure + " pendant " + conf.IdNavigation.Duree
+                };
+                using var smtp = new MailKit.Net.Smtp.SmtpClient();
+                smtp.Connect("smtp.ac-nantes.fr", 465, SecureSocketOptions.SslOnConnect);
+                //smtp.Authenticate("hackathon.sio2@outlook.com", "hackathon1");
+                //smtp.Timeout = 200;
+                smtp.Send(email);
+                smtp.Disconnect(true);
+            }
+
+
+
+
+            string from = "hackathon.sio2@gmail.com";
+            string to = "hackathon.sio2@gmail.com";
+
+            
+            /*// send email
+            using var smtp = new MailKit.Net.Smtp.SmtpClient();
+            smtp.Connect("smtp.ac-nantes.fr", 465, SecureSocketOptions.SslOnConnect);
+            //smtp.Authenticate("hackathon.sio2@outlook.com", "hackathon1");
+            //smtp.Timeout = 200;
+            smtp.Send(email);
+            smtp.Disconnect(true);*/
+
+
+            /*using (SmtpClient client = new SmtpClient("smtp.ac-nantes.fr"))
+            {
+                MailMessage message = new MailMessage(from, to);
+                message.Subject = "Hello World";
+                message.Body = "Salut, comment ça va ?";
+                message.IsBodyHtml = false;
+                //client.Host = "smtp.gmail.com";
+                client.Port = 465;
+                client.EnableSsl = true;
+                client.UseDefaultCredentials = false;
+                //client.Credentials = new NetworkCredential("hackathon.sio2@outlook.com", "hackathon1");
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.Send(message);
+            }*/
+            MessageBox.Show("réussi");
         }
     }
 }
