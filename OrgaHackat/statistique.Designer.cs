@@ -37,6 +37,10 @@
             groupBox1 = new GroupBox();
             dgv_nbParticipantAtelier = new DataGridView();
             label1 = new Label();
+            lbl_moitierPlace = new Label();
+            lbl_yellow = new Label();
+            lbl_red = new Label();
+            lbl_plusPlace = new Label();
             gbx_nbparticipantHackathon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_nbParticipantHackathon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bddboudero5ContextBindingSource).BeginInit();
@@ -47,7 +51,7 @@
             // btn_retour_accueil
             // 
             btn_retour_accueil.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_retour_accueil.Location = new Point(12, 446);
+            btn_retour_accueil.Location = new Point(12, 395);
             btn_retour_accueil.Name = "btn_retour_accueil";
             btn_retour_accueil.Size = new Size(106, 43);
             btn_retour_accueil.TabIndex = 2;
@@ -93,7 +97,7 @@
             // 
             groupBox1.Controls.Add(dgv_nbParticipantAtelier);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(451, 12);
+            groupBox1.Location = new Point(421, 12);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(403, 377);
             groupBox1.TabIndex = 4;
@@ -119,11 +123,53 @@
             label1.TabIndex = 0;
             label1.Text = "Nombre de participant par atelier\r\n";
             // 
+            // lbl_moitierPlace
+            // 
+            lbl_moitierPlace.AutoSize = true;
+            lbl_moitierPlace.Location = new Point(628, 395);
+            lbl_moitierPlace.Name = "lbl_moitierPlace";
+            lbl_moitierPlace.Size = new Size(162, 15);
+            lbl_moitierPlace.TabIndex = 5;
+            lbl_moitierPlace.Text = "Moitié des places déjà prisent";
+            // 
+            // lbl_yellow
+            // 
+            lbl_yellow.AutoSize = true;
+            lbl_yellow.BackColor = Color.Yellow;
+            lbl_yellow.Location = new Point(796, 395);
+            lbl_yellow.Name = "lbl_yellow";
+            lbl_yellow.Size = new Size(28, 15);
+            lbl_yellow.TabIndex = 6;
+            lbl_yellow.Text = "       ";
+            // 
+            // lbl_red
+            // 
+            lbl_red.AutoSize = true;
+            lbl_red.BackColor = Color.Red;
+            lbl_red.Location = new Point(796, 414);
+            lbl_red.Name = "lbl_red";
+            lbl_red.Size = new Size(28, 15);
+            lbl_red.TabIndex = 8;
+            lbl_red.Text = "       ";
+            // 
+            // lbl_plusPlace
+            // 
+            lbl_plusPlace.AutoSize = true;
+            lbl_plusPlace.Location = new Point(653, 414);
+            lbl_plusPlace.Name = "lbl_plusPlace";
+            lbl_plusPlace.Size = new Size(134, 15);
+            lbl_plusPlace.TabIndex = 7;
+            lbl_plusPlace.Text = "Plus de place disponible";
+            // 
             // statistique
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1105, 501);
+            ClientSize = new Size(835, 445);
+            Controls.Add(lbl_red);
+            Controls.Add(lbl_plusPlace);
+            Controls.Add(lbl_yellow);
+            Controls.Add(lbl_moitierPlace);
             Controls.Add(groupBox1);
             Controls.Add(gbx_nbparticipantHackathon);
             Controls.Add(btn_retour_accueil);
@@ -138,6 +184,7 @@
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_nbParticipantAtelier).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -150,5 +197,9 @@
         private GroupBox groupBox1;
         private DataGridView dgv_nbParticipantAtelier;
         private Label label1;
+        private Label lbl_moitierPlace;
+        private Label lbl_yellow;
+        private Label lbl_red;
+        private Label lbl_plusPlace;
     }
 }

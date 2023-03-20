@@ -1,4 +1,5 @@
-﻿using OrgaHackat.Models;
+﻿using iTextSharp.text;
+using OrgaHackat.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,6 +41,14 @@ namespace OrgaHackat
             {
                 ICollection<Inscription> listInscription = cnx.Inscriptions.Where(ins => ins.IdHackathon == listHackathon[i].Id).ToList();
                 dgv_nbParticipantHackathon.Rows.Add(listHackathon[i].Id, listHackathon[i].Theme, listInscription.Count());
+                if (listInscription.Count() >= listHackathon[i].NbPlaces / 2)
+                {
+                    dgv_nbParticipantHackathon.Rows[i].Cells[2].Style.BackColor = Color.Yellow;
+                }
+                if (listInscription.Count() == listHackathon[i].NbPlaces)
+                {
+                    dgv_nbParticipantHackathon.Rows[i].Cells[2].Style.BackColor = Color.Red;
+                }
             }
 
             List<Initiation> listInitiation = cnx.Initiations.ToList();
@@ -52,6 +61,14 @@ namespace OrgaHackat
                 ICollection<Participant> listParticipant = cnx.Participants.Where(part => part.InitiationId == listInitiation[i].Id).ToList();
                 List<Evenement> nomInitiation = cnx.Evenements.Where(even => even.Id == listInitiation[i].Id).ToList();
                 dgv_nbParticipantAtelier.Rows.Add(listInitiation[i].Id, nomInitiation[0].Libelle, listParticipant.Count());
+                if (listParticipant.Count() >= listInitiation[i].NbPlaceLimite / 2)
+                {
+                    dgv_nbParticipantAtelier.Rows[i].Cells[2].Style.BackColor = Color.Yellow;
+                }
+                if (listParticipant.Count() == listInitiation[i].NbPlaceLimite)
+                {
+                    dgv_nbParticipantAtelier.Rows[i].Cells[2].Style.BackColor = Color.Red;
+                }
             }
         }
     }
