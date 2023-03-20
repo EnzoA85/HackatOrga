@@ -52,9 +52,9 @@
             lblChoixHackaton = new Label();
             cbxChoixDeHackaton = new ComboBox();
             tabRappelConference = new TabPage();
+            clbConferences = new CheckedListBox();
             btnMail = new Button();
             labelRappelConf = new Label();
-            clbConferences = new CheckedListBox();
             tabConferences.SuspendLayout();
             tabEnregistrerConference.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numDuree).BeginInit();
@@ -291,13 +291,21 @@
             tabRappelConference.Text = "Rappels";
             tabRappelConference.UseVisualStyleBackColor = true;
             // 
+            // clbConferences
+            // 
+            clbConferences.FormattingEnabled = true;
+            clbConferences.Location = new Point(6, 46);
+            clbConferences.Name = "clbConferences";
+            clbConferences.Size = new Size(120, 94);
+            clbConferences.TabIndex = 29;
+            // 
             // btnMail
             // 
             btnMail.Location = new Point(27, 330);
             btnMail.Name = "btnMail";
             btnMail.Size = new Size(184, 34);
             btnMail.TabIndex = 28;
-            btnMail.Text = "Envoyer un mail de rapport";
+            btnMail.Text = "Envoyer un mail de rappel";
             btnMail.UseVisualStyleBackColor = true;
             btnMail.Click += btnMail_Click;
             // 
@@ -310,14 +318,6 @@
             labelRappelConf.Size = new Size(152, 15);
             labelRappelConf.TabIndex = 26;
             labelRappelConf.Text = "Choisissez une conférence :";
-            // 
-            // clbConferences
-            // 
-            clbConferences.FormattingEnabled = true;
-            clbConferences.Location = new Point(6, 46);
-            clbConferences.Name = "clbConferences";
-            clbConferences.Size = new Size(120, 94);
-            clbConferences.TabIndex = 29;
             // 
             // enregistrerConference
             // 

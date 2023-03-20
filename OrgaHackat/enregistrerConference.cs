@@ -123,11 +123,12 @@ namespace OrgaHackat
                 var email = new MimeMessage();
                 email.From.Add(MailboxAddress.Parse("hackathon.sio2@gmail.com"));
                 email.To.Add(MailboxAddress.Parse(conf.Intervenant.Mail));
-                email.Subject = "Test Email Subject";
-                Evenement ev = (Evenement)cnx.Evenements.Where( evn => evn.Id == conf.Id).Single();
+                email.Subject = "Email de rappel pour la conférence " + conf.Theme;
+                Evenement ev = (Evenement)cnx.Evenements.Where(evn => evn.Id == conf.Id).Single();
                 Hackathon hackathon = (Hackathon)cnx.Hackathons.Where(hac => hac.Id == ev.HackathonId).Single();
 
-                email.Body = new TextPart(TextFormat.Plain) {
+                email.Body = new TextPart(TextFormat.Plain)
+                {
                     Text = "Rappel pour votre conference\n\n" +
                     "Adresse : " + hackathon.Rue + ", " + hackathon.Ville + " " + hackathon.CodePostal + " " +
                     hackathon.Lieu + "\n" +
@@ -148,7 +149,7 @@ namespace OrgaHackat
             string from = "hackathon.sio2@gmail.com";
             string to = "hackathon.sio2@gmail.com";
 
-            
+
             /*// send email
             using var smtp = new MailKit.Net.Smtp.SmtpClient();
             smtp.Connect("smtp.ac-nantes.fr", 465, SecureSocketOptions.SslOnConnect);
