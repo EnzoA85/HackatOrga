@@ -101,7 +101,7 @@ namespace OrgaHackat
             }
         }
 
-        private void btnRetour_Click(object sender, EventArgs e)
+        private void btnRetour_Click_1(object sender, EventArgs e)
         {
             accueil page = new accueil();
             page.Show();

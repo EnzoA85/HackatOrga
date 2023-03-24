@@ -134,6 +134,7 @@
             btnRetour.TabIndex = 40;
             btnRetour.Text = "Retour";
             btnRetour.UseVisualStyleBackColor = true;
+            btnRetour.Click += btnRetour_Click_1;
             // 
             // lblMinute
             // 
