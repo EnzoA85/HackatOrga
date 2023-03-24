@@ -159,6 +159,7 @@
             btnEnregistrer.TabIndex = 37;
             btnEnregistrer.Text = "Enregistrer";
             btnEnregistrer.UseVisualStyleBackColor = true;
+            btnEnregistrer.Click += btnEnregistrer_Click_1;
             // 
             // tbxTheme
             // 

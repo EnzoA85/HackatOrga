@@ -49,7 +49,7 @@ namespace OrgaHackat
 
         }
 
-        private void btnEnregistrer_Click(object sender, EventArgs e)
+        private void btnEnregistrer_Click_1(object sender, EventArgs e)
         {
             bddboudero5Context cnx = new bddboudero5Context();
 
