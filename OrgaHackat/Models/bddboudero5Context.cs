@@ -154,8 +154,7 @@ namespace OrgaHackat.Models
 
                 entity.Property(e => e.CodePostal)
                     .HasMaxLength(5)
-                    .HasColumnName("codePostal")
-                    .IsFixedLength();
+                    .HasColumnName("codePostal");
 
                 entity.Property(e => e.DateDebut).HasColumnName("dateDebut");
 

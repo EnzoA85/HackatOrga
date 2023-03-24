@@ -23,9 +23,9 @@ namespace OrgaHackat.Models
         public string? Image { get; set; }
         public int? NbPlaces { get; set; }
         public TimeOnly? HeureDebut { get; set; }
-        public DateOnly? DateFin { get; set; }
+        public DateOnly DateFin { get; set; }
         public TimeOnly? HeureFin { get; set; }
-        public DateOnly? DateLimite { get; set; }
+        public DateOnly DateLimite { get; set; }
 
         public virtual ICollection<Evenement> Evenements { get; set; }
         public virtual ICollection<Inscription> Inscriptions { get; set; }

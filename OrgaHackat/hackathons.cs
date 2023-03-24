@@ -134,10 +134,10 @@ namespace OrgaHackat
             tbx_description_edit_hackathon.Text = unHackathon.Description;
             npd_nbplace_edit_hackathon.Value = Convert.ToDecimal(unHackathon.NbPlaces);
             dtp_datedebut_edit_hackathon.Value = unHackathon.DateDebut.ToDateTime(TimeOnly.Parse("10:00 PM"));
-            dtp_datefin_edit_hackathon.Value = Convert.ToDateTime(unHackathon.DateFin);
-            //dtp_datefin_edit_hackathon.Value = unHackathon.DateFin.ToDateTime(TimeOnly.Parse("10:00 PM"));
-            dtp_datelimite_edit_hackathon.Value = Convert.ToDateTime(unHackathon.DateLimite);
-            //dtp_datelimite_edit_hackathon.Value = unHackathon.DateLimite.ToDateTime(TimeOnly.Parse("10:00 PM"));
+            //dtp_datefin_edit_hackathon.Value = Convert.ToDateTime(unHackathon.DateFin);
+            dtp_datefin_edit_hackathon.Value = unHackathon.DateFin.ToDateTime(TimeOnly.Parse("10:00 PM"));
+            //dtp_datelimite_edit_hackathon.Value = Convert.ToDateTime(unHackathon.DateLimite);
+            dtp_datelimite_edit_hackathon.Value = unHackathon.DateLimite.ToDateTime(TimeOnly.Parse("10:00 PM"));
         }
 
         private void Modifier_Click(object sender, EventArgs e)
@@ -185,10 +185,10 @@ namespace OrgaHackat
             tbx_description_edit_hackathon.Text = unHackathon.Description;
             npd_nbplace_edit_hackathon.Value = Convert.ToDecimal(unHackathon.NbPlaces);
             dtp_datedebut_edit_hackathon.Value = unHackathon.DateDebut.ToDateTime(TimeOnly.Parse("10:00 PM"));
-            dtp_datefin_edit_hackathon.Value = Convert.ToDateTime(unHackathon.DateFin);
-            //dtp_datefin_edit_hackathon.Value = unHackathon.DateFin.ToDateTime(TimeOnly.Parse("10:00 PM"));
-            dtp_datelimite_edit_hackathon.Value = Convert.ToDateTime(unHackathon.DateLimite);
-            //dtp_datelimite_edit_hackathon.Value = unHackathon.DateLimite.ToDateTime(TimeOnly.Parse("10:00 PM"));
+            //dtp_datefin_edit_hackathon.Value = Convert.ToDateTime(unHackathon.DateFin);
+            dtp_datefin_edit_hackathon.Value = unHackathon.DateFin.ToDateTime(TimeOnly.Parse("10:00 PM"));
+            //dtp_datelimite_edit_hackathon.Value = Convert.ToDateTime(unHackathon.DateLimite);
+            dtp_datelimite_edit_hackathon.Value = unHackathon.DateLimite.ToDateTime(TimeOnly.Parse("10:00 PM"));
         }
 
         private void btn_HackathomRem_Click(object sender, EventArgs e)
