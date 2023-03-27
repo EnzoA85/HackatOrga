@@ -65,7 +65,27 @@ namespace OrgaHackat
             }
             else
             {
+                var interv = (Intervenant) cbxIntervenant.SelectedItem;
+                Intervenant intervenant = cnx.Intervenants.Where(nint => nint.Nom == interv.Nom).Single();
+                var hacka = (Hackathon)cbxChoixDeHackaton.SelectedItem;
+                Hackathon hackathon = cnx.Hackathons.Where(nhac => nhac.Theme == hacka.Theme).Single();
+                Evenement Ev = new Evenement()
+                {
+                    //Recupération des champs apres conversion en leur bon type
+                    HackathonId = hackathon.Id,
+                    Libelle = tbxLibelle.Text,
+                    Date = DateOnly.FromDateTime(Convert.ToDateTime(dtpDate.Value)),
+                    Duree = Convert.ToInt32(numDuree.Value),
+                    Heure = TimeOnly.FromDateTime(Convert.ToDateTime(dtpTime.Value)),
+                    Salle = tbxSalle.Text,
+                    Type = "conf" // le type pour symfony
+                };
+
+                cnx.Evenements.Add(Ev);
+                cnx.SaveChanges();
+
                 // creation de l'objet evenement
+                /*
                 Evenement evenement = new Evenement()
                 {
                     HackathonId = cbxChoixDeHackaton.SelectedIndex,
@@ -76,16 +96,17 @@ namespace OrgaHackat
                     Salle = tbxSalle.Text,
                     Type = "conf", // type necessaire pour la bdd et symfony
                 };
-                cnx.Evenements.Add(evenement);
-                cnx.SaveChanges();
+                cnx.Evenements.Add(EvInitiation);
+                cnx.SaveChanges();*/
 
                 // on recup l'intervenant avec l'id
-                Intervenant intervenant = cnx.Intervenants.Where(id => id.Id == cbxIntervenant.SelectedIndex).Single();
+                
 
                 // creation de l'objet evenement
                 Conference conference = new Conference()
                 {
-                    Id = evenement.Id,
+                    //Id = evenement.Id,
+                    Id = Ev.Id,
                     Theme = tbxTheme.Text,
                     Intervenant = intervenant
                 };
@@ -93,7 +114,7 @@ namespace OrgaHackat
                 cnx.SaveChanges();
 
                 // ajout de la conference dans la liste de l'intervenant
-                intervenant.Conferences.Add(conference);
+                interv.Conferences.Add(conference);
                 cnx.Intervenants.Update(intervenant);
 
                 cnx.SaveChanges();
