@@ -26,11 +26,13 @@ namespace OrgaHackat
             bddboudero5Context cnx = new bddboudero5Context();
 
             //(Heritage) Créer d'abord un événement puis une initiation avec la meme id
-            
+            var hacka = (Hackathon)cbxHackathons.SelectedItem;
+            Hackathon hackathon = cnx.Hackathons.Where(nhac => nhac.Theme == hacka.Theme).Single();
+
             Evenement EvInitiation = new Evenement()
             {
                 //Recupération des champs apres conversion en leur bon type
-                HackathonId = cbxHackathons.SelectedIndex,
+                HackathonId = hackathon.Id,
                 Libelle = tbxLibelle.Text,
                 Date = DateOnly.FromDateTime(Convert.ToDateTime(dtpDate.Value)),
                 Duree = Convert.ToInt32(numDuree.Value),
